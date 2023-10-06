@@ -19,7 +19,7 @@ function App() {
             per_page: '10'
         },
         headers: {
-            'X-RapidAPI-Key': 'd9b652efb4msh6e4040368154c25p1c68bejsn16303a787b72',
+            'X-RapidAPI-Key': 'd9b652efb4msh6e4040368154c25p1c68bednkay7jsn16303a787b72',
             'X-RapidAPI-Host': 'coingecko.p.rapidapi.com'
         }
     };
