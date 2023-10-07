@@ -1,13 +1,19 @@
 
 
 import Header from './components/sections/Header';
-import Footer from './components/sections/Footer'
+import Hero from './components/sections/Hero';
+import MarketUpdate from './components/sections/MarketUpdate';
+import Footer from './components/sections/Footer';
 
+
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 
-
 function App() {
+
+    const [cryptoData, setCryptoData] = useState([]);
+
 
     // CoinGecko Api
     const options = {
@@ -19,40 +25,45 @@ function App() {
             per_page: '10'
         },
         headers: {
-            'X-RapidAPI-Key': 'd9b652efb4msh6e4040368154c25p1c68bednkay7jsn16303a787b72',
+            'X-RapidAPI-Key': 'd9b652efb4msh6e4040368154c25p1c68bejsn16303a787b72',
             'X-RapidAPI-Host': 'coingecko.p.rapidapi.com'
         }
     };
 
-    async function getMarketData() {
-        try {
-            const response = await axios.request(options);
-            console.log(response.data);
-        } catch (error) {
-            console.error(error);
+    useEffect(() => {
+        async function getMarketData() {
+            try {
+                const response = await axios.request(options);
+                setCryptoData(response.data)
+                console.log(response.data);
+
+            } catch (error) {
+                console.error(error);
+            }
         }
-    }
-    getMarketData()
+        getMarketData()
+        // [] at load time
+    }, [])
 
 
 
 
-    
+
+
     return (
-        <div className="App">
-
-           <Header />
-
-
-
+        <>
+            <Header />
 
             <main>
+                <Hero cryptoData={cryptoData} />
+
+                <MarketUpdate cryptoData={cryptoData} />
             </main>
 
-            {/* <Footer /> */}
 
 
-        </div>
+            <Footer />
+        </>
     );
 }
 

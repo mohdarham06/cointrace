@@ -17,13 +17,14 @@
 
 html {
     font-size: 100%;
+    scroll-behavior: smooth;
 }
 
 
 /* || ROOT || */
 :root {
     --background: rgb(21, 11, 49);
-	--font: rgb(255, 255, 255);
+	--font: #ffffff;
     --header: #000000;
 	--links: #8696b6;
 	--footer: #08060f;
@@ -43,17 +44,11 @@ body {
     max-width: 800px;
     overflow: hidden;
     display: flex;
+    flex-direction: column;
     background: var(--background);
     /* border: 1px solid red; */
 }
 
-.App {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    border: 1px solid rgb(39, 161, 76);
-}
 
 
 
