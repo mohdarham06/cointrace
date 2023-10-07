@@ -4,6 +4,8 @@ import MarketUpdate from '../MarketUpdate'
 
 // cryptoData from App
 const Market = ({ cryptoData }) => {
+
+    
     return (
         <section className='market-section'>
             <h2>Market Update</h2>
