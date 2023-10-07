@@ -37,15 +37,15 @@ body {
     justify-content: center;
     align-items: center;
     color: var(--font);
+    background: var(--background);
 }
 
 #root {
     width: 100%;
-    max-width: 800px;
+    max-width: 1300px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    background: var(--background);
     /* border: 1px solid red; */
 }
 
@@ -61,7 +61,6 @@ body {
 
 /* Header */
 header {
-    background-color: var(--header);
 }
 
 
@@ -101,6 +100,52 @@ main {
 
 
 
+/* Market */
+.market-section {
+    padding: 0 1.5rem !important;
+}
+
+.coin-list .coin {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid #f3f2f4;
+    
+}
+
+.coin span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.4rem;
+}
+
+.coin .coin-name {
+    font-weight: 600;
+}
+.coin .coin-symbol {
+    font-size: 0.8rem;
+   color: #dad7dd;
+}
+
+
+.coin .coin-icon {
+    width: 3rem;
+    height: 3rem;
+}
+
+
+
+
+
+.coin .price-change.green {
+    color: rgb(95, 243, 127);
+}
+.coin .price-change.red {
+    color: rgb(255, 58, 58);
+}
 
 
 
@@ -118,7 +163,6 @@ main {
 
 /* Footer */
 footer {
-    background-color: rgb(24, 29, 39);
     color: white;
 }
 

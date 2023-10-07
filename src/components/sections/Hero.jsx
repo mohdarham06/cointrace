@@ -6,7 +6,7 @@ const Hero = ({ cryptoData }) => {
     return (
         // remove main
         <section>
-           
+           <h1>Helo Section</h1>
         </section>
     )
 }

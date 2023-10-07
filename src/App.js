@@ -2,7 +2,7 @@
 
 import Header from './components/sections/Header';
 import Hero from './components/sections/Hero';
-import MarketUpdate from './components/sections/MarketUpdate';
+import Market from './components/sections/Market';
 import Footer from './components/sections/Footer';
 
 
@@ -28,7 +28,7 @@ function App() {
             'X-RapidAPI-Key': 'd9b652efb4msh6e4040368154c25p1c68bejsn16303a787b72',
             'X-RapidAPI-Host': 'coingecko.p.rapidapi.com'
         }
-    };
+    }
 
     useEffect(() => {
         async function getMarketData() {
@@ -57,7 +57,7 @@ function App() {
             <main>
                 <Hero cryptoData={cryptoData} />
 
-                <MarketUpdate cryptoData={cryptoData} />
+                <Market cryptoData={cryptoData} />
             </main>
 
 
