@@ -19,7 +19,12 @@ const MarketUpdate = ({ cryptoData }) => {
 
     return (
         <>
-            <div className="coin-list-info"></div>
+            <div className="coin-list-info">
+                <div>Coin</div>
+                <div>Price</div>
+                <div>24h Change</div>
+                <div>Market Cap</div>
+            </div>
             <div className='coin-list'>
                 {
                     cryptoData.map((coin) => (
@@ -41,8 +46,7 @@ const MarketUpdate = ({ cryptoData }) => {
                             </p>
 
 
-                            <p>{"$ " + formatNumberScale(coin.market_cap)}</p>
-
+                            <p className='market-cap'>{"$ " + formatNumberScale(coin.market_cap)}</p>
 
                         </div>
                     ))
