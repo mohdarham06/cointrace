@@ -136,6 +136,10 @@ main {
 
 
 
+
+
+
+
 /* Market */
 .market-section {
     padding: 0 1.5rem !important;
@@ -207,7 +211,30 @@ main {
 
 
 
+/* pagination */
+.market-section .pagination-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.2rem;
+    padding: 3rem 0;
+}
 
+.pagination-container .number-pagination{
+    border: none;
+    cursor: pointer;
+    font: inherit; 
+    text-align: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    font-size: 1.3rem;
+}
+
+.number-pagination.activePagi {
+    color: #ffffff;
+    background: #7f30fd;
+}
 
 
 
