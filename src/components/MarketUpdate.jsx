@@ -1,5 +1,9 @@
 import React from 'react'
 
+import { Link } from 'react-router-dom';
+
+
+
 // cryptoData from Market
 const MarketUpdate = ({ cryptoData }) => {
 
@@ -28,7 +32,10 @@ const MarketUpdate = ({ cryptoData }) => {
             <div className='coin-list'>
                 {
                     cryptoData.map((coin) => (
-                        <div className='coin' key={coin.id} >
+                        <div
+                            to={`/coin/${coin.id}`}
+                            className='coin'
+                            key={coin.id} >
                             <span>
                                 <img className='coin-icon' src={coin.image} alt="" />
                                 <div>
