@@ -1,9 +1,11 @@
 
 
+
 import Header from './components/sections/Header';
-import Hero from './components/sections/Hero';
-import Market from './components/sections/Market';
-import Footer from './components/sections/Footer';
+import Home from './Pages/Home';
+import Coin from './Pages/Coin';
+
+import { Routes, Route } from 'react-router-dom';
 
 
 // import { useState, useEffect } from 'react';
@@ -12,23 +14,19 @@ import Footer from './components/sections/Footer';
 
 function App() {
 
-    
-
-
-
-
     return (
         <>
             <Header />
 
-            <main>
-                <Hero />
+            <Routes>
+                <Route path='/' element={<Home />}>
+                </Route>
 
-                <Market />
-            </main>
+                <Route path='/coin' element={<Coin />}>
+                    <Route path=":coinId" element={<Coin />}></Route>
+                </Route>
 
-
-            <Footer />
+            </Routes>
         </>
     );
 }

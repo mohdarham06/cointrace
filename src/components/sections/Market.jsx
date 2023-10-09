@@ -11,7 +11,6 @@ const Market = () => {
     const [cryptoData, setCryptoData] = useState([]);
 
 
-    // CoinGecko Api
     const options = {
         method: 'GET',
         url: 'https://coingecko.p.rapidapi.com/coins/markets',
@@ -30,8 +29,8 @@ const Market = () => {
         async function getMarketData() {
             try {
                 const response = await axios.request(options);
-                setCryptoData(response.data)
                 console.log(response.data);
+                setCryptoData(response.data);
 
             } catch (error) {
                 console.error(error);
@@ -63,8 +62,8 @@ const Market = () => {
             <h2 className='section-headings'>Market Update</h2>
             <MarketUpdate cryptoData={cryptoData} />
 
-            <div className="pagination-container">
 
+            <div className="pagination-container">
                 {/* <button className='previous-pagination'
                     onClick={() => {
                         if (currentPage <= 1) return;
@@ -82,7 +81,6 @@ const Market = () => {
                     Next {currentPage}
                 </button> */}
             </div>
-
         </section>
     )
 }

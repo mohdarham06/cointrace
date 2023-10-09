@@ -49,6 +49,12 @@ body {
 
 
 
+a {
+    text-decoration: none;
+    color: var(--font);
+}
+
+
 
 
 
@@ -63,7 +69,7 @@ header {
 }
 
 header .brand {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     font-weight: 600;
 }
 
@@ -72,7 +78,7 @@ header nav ul {
     flex-direction: row;
     list-style: none;
     gap: 2.2rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
     white-space: nowrap;
 }
@@ -178,8 +184,8 @@ main {
     white-space: nowrap;
 }
 
-.coin:hover,
-.coin:active {
+.coin-list .coin:hover,
+.coin-list .coin:active {
     background-color: #2a124e;
 }
 
@@ -206,7 +212,6 @@ main {
     color: #dad7dd;
     font-weight: 300;
 }
-
 
 .coin .price-change.green {
     color: rgb(95, 243, 127);
@@ -291,5 +296,6 @@ footer {
     flex-direction: row;
     gap: 2rem;
     font-size: 1.1rem;
+    cursor: default;
 }
 

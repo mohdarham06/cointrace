@@ -32,7 +32,7 @@ const MarketUpdate = ({ cryptoData }) => {
             <div className='coin-list'>
                 {
                     cryptoData.map((coin) => (
-                        <div
+                        <Link
                             to={`/coin/${coin.id}`}
                             className='coin'
                             key={coin.id} >
@@ -55,7 +55,7 @@ const MarketUpdate = ({ cryptoData }) => {
 
                             <p className='market-cap'>{"$ " + formatNumberScale(coin.market_cap)}</p>
 
-                        </div>
+                        </Link>
                     ))
                 }
             </div>
