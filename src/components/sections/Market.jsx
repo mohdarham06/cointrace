@@ -9,6 +9,8 @@ import axios from 'axios';
 const Market = () => {
     const [currentPage, setCurrentPage] = useState(1)
     const [cryptoData, setCryptoData] = useState([]);
+    const [cryptoLoading, setCryptoLoading] = useState(true);
+
 
 
     const options = {

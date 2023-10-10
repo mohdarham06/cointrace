@@ -36,9 +36,9 @@ const MarketUpdate = ({ cryptoData }) => {
                             to={`/coin/${coin.id}`}
                             className='coin'
                             key={coin.id} >
+                            
                             <span>
                                 {coin.image ? <img className='coin-icon' src={coin.image} alt={coin.id} /> : null}
-
                                 <div>
                                     <div className='coin-name'>{coin.name ? coin.name : null}</div>
                                     <div className='coin-symbol'>{coin.symbol ? (coin.symbol.toUpperCase()) : null}</div>
@@ -54,7 +54,6 @@ const MarketUpdate = ({ cryptoData }) => {
                             >
                                 {coin.price_change_percentage_24h ? (coin.price_change_percentage_24h.toFixed(2) + " %") : "--"}
                             </p>
-
 
                             <p className='market-cap'>{coin.market_cap ? ("$ " + formatNumberScale(coin.market_cap)) : "--"}</p>
 

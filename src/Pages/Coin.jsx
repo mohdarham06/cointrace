@@ -10,6 +10,8 @@ import axios from 'axios';
 const Coin = () => {
     const { coinId } = useParams();
     const [coinData, setCoinData] = useState([]);
+    const [coinLoading, setCoinLoading] = useState(true);
+
 
 
     const options = {
