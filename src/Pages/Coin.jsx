@@ -12,16 +12,15 @@ const Coin = () => {
     const [coinData, setCoinData] = useState([]);
 
 
-
     const options = {
         method: 'GET',
         url: `https://coingecko.p.rapidapi.com/coins/${coinId}`,
         params: {
-            localization: 'true',
-            tickers: 'true',
             market_data: 'true',
-            community_data: 'true',
-            developer_data: 'true',
+            localization: 'false',
+            tickers: 'false',
+            community_data: 'false',
+            developer_data: 'false',
             sparkline: 'false'
         },
         headers: {
@@ -41,7 +40,8 @@ const Coin = () => {
             }
         }
         getCoinData();
-    }, [coinId])
+    }, [])
+
 
 
     return (
@@ -50,10 +50,14 @@ const Coin = () => {
                 <section className="coin-section">
                     <div className="coin-data-container">
 
-                        <div className="coin-rank">
-                            {coinData.market_cap_rank}
+                        <div className="coin-icon">
+                            {coinData.image ? <img src={coinData.image.large} alt={coinData.id} /> : null}
                         </div>
-                        
+
+                        <div className="coin-rank">
+                            {coinData.market_cap_rank ? coinData.market_cap_rank : null}
+                        </div>
+
                     </div>
                 </section>
 

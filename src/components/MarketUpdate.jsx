@@ -37,23 +37,26 @@ const MarketUpdate = ({ cryptoData }) => {
                             className='coin'
                             key={coin.id} >
                             <span>
-                                <img className='coin-icon' src={coin.image} alt="" />
+                                {coin.image ? <img className='coin-icon' src={coin.image} alt={coin.id} /> : null}
+
                                 <div>
-                                    <div className='coin-name'>{coin.name}</div>
-                                    <div className="coin-symbol">{coin.symbol.toUpperCase()}</div>
+                                    <div className='coin-name'>{coin.name ? coin.name : null}</div>
+                                    <div className='coin-symbol'>{coin.symbol ? (coin.symbol.toUpperCase()) : null}</div>
                                 </div>
                             </span>
 
-                            <p className='current-price'>{"$ " + coin.current_price.toFixed(2)}</p>
+                            <p className='current-price'>
+                                {coin.current_price ? ("$ " + coin.current_price.toFixed(2)) : "--"}
+                            </p>
 
-                            <p className={'price-change ' + (coin.price_change_percentage_24h >= 0
-                                ? 'green' : 'red')}
+                            <p className={'price-change ' + (coin.price_change_percentage_24h ? (coin.price_change_percentage_24h >= 0
+                                ? 'green' : 'red') : '')}
                             >
-                                {coin.price_change_percentage_24h.toFixed(2) + " %"}
+                                {coin.price_change_percentage_24h ? (coin.price_change_percentage_24h.toFixed(2) + " %") : "--"}
                             </p>
 
 
-                            <p className='market-cap'>{"$ " + formatNumberScale(coin.market_cap)}</p>
+                            <p className='market-cap'>{coin.market_cap ? ("$ " + formatNumberScale(coin.market_cap)) : "--"}</p>
 
                         </Link>
                     ))
@@ -64,3 +67,4 @@ const MarketUpdate = ({ cryptoData }) => {
 }
 
 export default MarketUpdate
+
