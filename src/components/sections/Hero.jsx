@@ -45,6 +45,10 @@ const Hero = () => {
 
 
 
+    function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
     return (
         // remove main
         <section className='hero-section'>
@@ -81,11 +85,8 @@ const Hero = () => {
                             </div>
 
                             <p className='current-price'>
-                                {coin.current_price ? ("$ " + coin.current_price.toFixed(2)) : "--"}
+                                {coin.current_price ? ("$ " + numberWithCommas(coin.current_price.toFixed(2))) : "--"}
                             </p>
-
-
-
                         </Link>
                     ))
                 }

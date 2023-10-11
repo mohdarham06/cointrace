@@ -14,7 +14,6 @@ const Coin = () => {
     const [coinLoading, setCoinLoading] = useState(true);
 
 
-
     const options = {
         method: 'GET',
         url: `https://coingecko.p.rapidapi.com/coins/${coinId}`,
@@ -47,12 +46,12 @@ const Coin = () => {
     }, [])
 
 
-
+    
     return (
         <>
             <main>
                 <section className="coin-section">
-                {coinLoading && <Loader />}
+                    {coinLoading && <Loader />}
 
                     <div className="coin-data-container">
 

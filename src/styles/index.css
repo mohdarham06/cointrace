@@ -49,10 +49,14 @@ body {
 
 
 
-a {
-    text-decoration: none;
-    color: var(--font);
+/* Main */
+main {
+    width: 100%;
+    /* flex-grow: 1; */
+    /* overflow-y: auto; */
 }
+
+
 
 
 
@@ -105,26 +109,24 @@ header .social-icons {
 
 
 
-/* Main */
-main {
-    width: 100%;
-    /* flex-grow: 1; */
-    /* overflow-y: auto; */
+
+
+
+
+/* Reusable */
+a {
+    text-decoration: none;
+    color: var(--font);
 }
-
-
-
-
-
-
-
-
-
 
 .section-headings {
     font-size: 2.5rem;
     margin: 15px 0 30px;
 }
+
+
+
+
 
 
 
@@ -141,7 +143,7 @@ main {
 }
 
 .hero-section .hero-heading {
-    font-size: 6rem;
+    font-size: 4rem;
     font-weight: 700;
 }
 
