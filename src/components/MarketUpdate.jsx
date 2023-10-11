@@ -22,46 +22,39 @@ const MarketUpdate = ({ cryptoData }) => {
     };
 
     return (
-        <>
-            <div className="coin-list-info">
-                <div>Coin</div>
-                <div>Price</div>
-                <div>24h Change</div>
-                <div>Market Cap</div>
-            </div>
-            <div className='coin-list'>
-                {
-                    cryptoData.map((coin) => (
-                        <Link
-                            to={`/coin/${coin.id}`}
-                            className='coin'
-                            key={coin.id} >
-                            
-                            <span>
-                                {coin.image ? <img className='coin-icon' src={coin.image} alt={coin.id} /> : null}
-                                <div>
-                                    <div className='coin-name'>{coin.name ? coin.name : null}</div>
-                                    <div className='coin-symbol'>{coin.symbol ? (coin.symbol.toUpperCase()) : null}</div>
-                                </div>
-                            </span>
 
-                            <p className='current-price'>
-                                {coin.current_price ? ("$ " + coin.current_price.toFixed(2)) : "--"}
-                            </p>
+        <div className='coin-list'>
+            {
+                cryptoData.map((coin) => (
+                    <Link
+                        to={`/coin/${coin.id}`}
+                        className='coin'
+                        key={coin.id} >
 
-                            <p className={'price-change ' + (coin.price_change_percentage_24h ? (coin.price_change_percentage_24h >= 0
-                                ? 'green' : 'red') : '')}
-                            >
-                                {coin.price_change_percentage_24h ? (coin.price_change_percentage_24h.toFixed(2) + " %") : "--"}
-                            </p>
+                        <span>
+                            {coin.image ? <img className='coin-icon' src={coin.image} alt={coin.id} /> : null}
+                            <div>
+                                <div className='coin-name'>{coin.name ? coin.name : null}</div>
+                                <div className='coin-symbol'>{coin.symbol ? (coin.symbol.toUpperCase()) : null}</div>
+                            </div>
+                        </span>
 
-                            <p className='market-cap'>{coin.market_cap ? ("$ " + formatNumberScale(coin.market_cap)) : "--"}</p>
+                        <p className='current-price'>
+                            {coin.current_price ? ("$ " + coin.current_price.toFixed(2)) : "--"}
+                        </p>
 
-                        </Link>
-                    ))
-                }
-            </div>
-        </>
+                        <p className={'price-change ' + (coin.price_change_percentage_24h ? (coin.price_change_percentage_24h >= 0
+                            ? 'green' : 'red') : '')}
+                        >
+                            {coin.price_change_percentage_24h ? (coin.price_change_percentage_24h.toFixed(2) + " %") : "--"}
+                        </p>
+
+                        <p className='market-cap'>{coin.market_cap ? ("$ " + formatNumberScale(coin.market_cap)) : "--"}</p>
+
+                    </Link>
+                ))
+            }
+        </div>
     )
 }
 

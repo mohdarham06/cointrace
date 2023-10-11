@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Footer from '../components/sections/Footer'
+import Loader from '../components/Loader';
 
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
@@ -37,6 +38,7 @@ const Coin = () => {
                 const response = await axios.request(options);
                 console.log(response.data);
                 setCoinData(response.data);
+                setCoinLoading(false)
             } catch (error) {
                 console.error(error);
             }
@@ -50,6 +52,7 @@ const Coin = () => {
         <>
             <main>
                 <section className="coin-section">
+                {coinLoading ? <Loader /> : null}
                     <div className="coin-data-container">
 
                         <div className="coin-icon">

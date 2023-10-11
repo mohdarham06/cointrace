@@ -1,5 +1,7 @@
 import React from 'react'
+
 import MarketUpdate from '../MarketUpdate'
+import Loader from '../Loader'
 
 import { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -33,6 +35,7 @@ const Market = () => {
                 const response = await axios.request(options);
                 console.log(response.data);
                 setCryptoData(response.data);
+                setCryptoLoading(false);
 
             } catch (error) {
                 console.error(error);
@@ -62,7 +65,17 @@ const Market = () => {
         <section className='market-section'>
 
             <h2 className='section-headings'>Market Update</h2>
+
+            <div className="coin-list-info">
+                <div>Coin</div>
+                <div>Price</div>
+                <div>24h Change</div>
+                <div>Market Cap</div>
+            </div>
+
+            {cryptoLoading && <Loader />}
             <MarketUpdate cryptoData={cryptoData} />
+            
 
 
             <div className="pagination-container">
