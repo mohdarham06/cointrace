@@ -10,7 +10,7 @@ import axios from 'axios';
 
 const Coin = () => {
     const { coinId } = useParams();
-    const [coinData, setCoinData] = useState([]);
+    const [coin, setCoin] = useState([]);
     const [coinLoading, setCoinLoading] = useState(true);
 
 
@@ -37,7 +37,7 @@ const Coin = () => {
             try {
                 const response = await axios.request(options);
                 console.log(response.data);
-                setCoinData(response.data);
+                setCoin(response.data);
                 setCoinLoading(false)
             } catch (error) {
                 console.error(error);
@@ -52,15 +52,16 @@ const Coin = () => {
         <>
             <main>
                 <section className="coin-section">
-                {coinLoading ? <Loader /> : null}
+                {coinLoading && <Loader />}
+
                     <div className="coin-data-container">
 
                         <div className="coin-icon">
-                            {coinData.image ? <img src={coinData.image.large} alt={coinData.id} /> : null}
+                            {coin.image ? <img src={coin.image.large} alt={coin.id} /> : null}
                         </div>
 
                         <div className="coin-rank">
-                            {coinData.market_cap_rank ? coinData.market_cap_rank : null}
+                            {coin.market_cap_rank ? coin.market_cap_rank : null}
                         </div>
 
                     </div>

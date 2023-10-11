@@ -105,14 +105,16 @@ header .social-icons {
 
 
 
-
-
 /* Main */
 main {
     width: 100%;
     /* flex-grow: 1; */
     /* overflow-y: auto; */
 }
+
+
+
+
 
 
 
@@ -139,9 +141,56 @@ main {
 }
 
 .hero-section .hero-heading {
-    font-size: 3.5rem;
+    font-size: 6rem;
     font-weight: 700;
 }
+
+
+
+/* coin-feed */
+.crypto-feed-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1000px;
+    height: 220px;
+    padding: 0 1rem;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    white-space: nowrap;
+
+}
+
+.feed-coin {
+    width: 12rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    user-select: none;
+}
+
+.feed-coin .coin-icon {
+    width: 5.7rem;
+    height: 5.7rem;
+    margin-bottom: 10px;
+}
+
+.feed-coin .current-price {
+    font-size: 1.3rem;
+    margin-top: 5px;
+}
+
+.feed-coin .price-change.green {
+    color: rgb(95, 243, 127);
+}
+
+.feed-coin .price-change.red {
+    color: rgb(255, 58, 58);
+}
+
 
 
 
@@ -155,7 +204,7 @@ main {
 
 /* Market */
 .market-section {
-    padding: 0 1.5rem !important;
+    padding: 2rem 1.5rem 0 !important;
 }
 
 .coin-list-info {
