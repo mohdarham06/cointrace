@@ -131,69 +131,6 @@ a {
 
 
 
-/* Hero */
-.hero-section {
-    padding: 0 1.5rem !important;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(rgb(34, 32, 116), rgb(15, 8, 36));
-}
-
-.hero-section .hero-heading {
-    font-size: 4rem;
-    font-weight: 700;
-}
-
-
-
-/* coin-feed */
-.crypto-feed-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1000px;
-    height: 220px;
-    padding: 0 1rem;
-    margin-top: 2rem;
-    font-size: 1.2rem;
-    font-weight: 600;
-    white-space: nowrap;
-
-}
-
-.feed-coin {
-    width: 12rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    user-select: none;
-}
-
-.feed-coin .coin-icon {
-    width: 5.7rem;
-    height: 5.7rem;
-    margin-bottom: 10px;
-}
-
-.feed-coin .current-price {
-    font-size: 1.3rem;
-    margin-top: 5px;
-}
-
-.feed-coin .price-change.green {
-    color: rgb(95, 243, 127);
-}
-
-.feed-coin .price-change.red {
-    color: rgb(255, 58, 58);
-}
-
-
 
 
 
@@ -314,6 +251,55 @@ a {
 
 
 /* coin */
+.coin-section {
+    padding: 0 1.5rem !important;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.coin-data-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.coin-data-container .coin-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    gap: 1.2rem;
+    border-right: 2px solid #fff;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.coin-data-container .coin-info .coin-icon {
+    width: 14rem;
+    height: 14rem;
+}
+
+.coin-data-container .coin-info .coin-name {
+    font-size: 1.8rem;
+}
+
+
+
+.coin-data-container .coin-data {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    width: 70%;
+}
+
+
+
 
 
 

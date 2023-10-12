@@ -46,7 +46,7 @@ const Coin = () => {
     }, [])
 
 
-    
+
     return (
         <>
             <main>
@@ -55,13 +55,25 @@ const Coin = () => {
 
                     <div className="coin-data-container">
 
-                        <div className="coin-icon">
-                            {coin.image ? <img src={coin.image.large} alt={coin.id} /> : null}
+                        <div className='coin-info'>
+                            <div>
+                                {coin.image ? <img className="coin-icon" src={coin.image.large} alt={coin.id} /> : null}
+                            </div>
+
+                            <div className="coin-name">{coin.name ? coin.name : "--"}</div>
+
+                            <div className="coin-rank">
+                                {`Rank: #${coin.market_cap_rank ? coin.market_cap_rank : "--"}`}
+                            </div>
                         </div>
 
-                        <div className="coin-rank">
-                            {coin.market_cap_rank ? coin.market_cap_rank : null}
+
+
+                        <div className='coin-data'>
+
                         </div>
+
+
 
                     </div>
                 </section>
