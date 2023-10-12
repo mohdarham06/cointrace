@@ -250,6 +250,10 @@ a {
 
 
 
+
+
+
+
 /* coin */
 .coin-section {
     padding: 0 1.5rem !important;
@@ -259,9 +263,7 @@ a {
     justify-content: center;
 }
 
-
-
-.coin-data-container {
+.coin-container {
     position: relative;
     width: 100%;
     display: flex;
@@ -269,7 +271,8 @@ a {
 }
 
 
-.coin-data-container .coin-info {
+
+.coin-container .coin-info {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -277,31 +280,56 @@ a {
     gap: 1.2rem;
     border-right: 2px solid #fff;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 
-.coin-data-container .coin-info .coin-icon {
+.coin-container .coin-info .coin-icon {
     width: 14rem;
     height: 14rem;
 }
 
-.coin-data-container .coin-info .coin-name {
-    font-size: 1.8rem;
+.coin-container .coin-info .coin-name {
+    font-size: 1.9rem;
 }
 
 
 
-.coin-data-container .coin-data {
+
+
+.coin-container .coin-data {
     display: flex;
     flex-direction: column;
     padding: 2rem;
     width: 70%;
+    font-size: 1.3rem;
+}
+
+.coin-data .data-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 3rem;
+}
+
+.coin-data .data-grid .grid-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.coin-data .data-label {
+    text-transform: uppercase;
+    padding-bottom: 0.5rem;
+    font-size: 1rem;
 }
 
 
+.coin-data .coin-price-change.green {
+    color: rgb(95, 243, 127);
+}
 
-
-
+.coin-data .coin-price-change.red {
+    color: rgb(255, 58, 58);
+}
 
 
 
