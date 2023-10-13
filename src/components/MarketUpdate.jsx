@@ -43,14 +43,14 @@ const MarketUpdate = ({ cryptoData }) => {
                             {coin.current_price ? ("$ " + coin.current_price.toFixed(2)) : "--"}
                         </p>
 
-                        <p className={'price-change ' + (coin.price_change_percentage_24h ? (coin.price_change_percentage_24h >= 0
-                            ? 'green' : 'red') : '')}
+                        <p className={'price-change ' + (coin.price_change_percentage_24h ?
+                            (coin.price_change_percentage_24h >= 0 ? 'green' : 'red') : '')}
                         >
                             {coin.price_change_percentage_24h ?
                                 (coin.price_change_percentage_24h >= 0
                                     ? ("+" + coin.price_change_percentage_24h.toFixed(2) + " %")
-                                    : (coin.price_change_percentage_24h.toFixed(2)) + " %")
-                                : "--"}
+                                    : (coin.price_change_percentage_24h.toFixed(2) + " %")
+                                ) : "--"}
                         </p>
 
                         <p className='market-cap'>{coin.market_cap ? ("$ " + formatNumberScale(coin.market_cap)) : "--"}</p>

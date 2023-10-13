@@ -103,14 +103,14 @@ const Coin = () => {
 
                                         <div>
                                             <div className="data-label">Price change (24h)</div>
-                                            <p className={"coin-price-change " + (coin.market_data.price_change_percentage_24h ? (coin.market_data.price_change_percentage_24h >= 0
-                                                ? "green" : "red") : "")}
+                                            <p className={"coin-price-change " + (coin.market_data.price_change_percentage_24h ?
+                                                (coin.market_data.price_change_percentage_24h >= 0 ? "green" : "red") : "")}
                                             >
                                                 {coin.market_data.price_change_percentage_24h ?
                                                     (coin.market_data.price_change_percentage_24h >= 0
                                                         ? ("+" + coin.market_data.price_change_percentage_24h.toFixed(2) + " %")
-                                                        : (coin.market_data.price_change_percentage_24h.toFixed(2)) + " %")
-                                                    : "--"}
+                                                        : (coin.market_data.price_change_percentage_24h.toFixed(2) + " %")
+                                                    ) : "--"}
                                             </p>
                                         </div>
 
