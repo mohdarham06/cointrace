@@ -1,6 +1,5 @@
 import React from 'react'
 
-import Footer from '../components/sections/Footer'
 import Loader from '../components/Loader';
 
 import { useState, useEffect } from 'react';
@@ -104,9 +103,14 @@ const Coin = () => {
 
                                         <div>
                                             <div className="data-label">Price change (24h)</div>
-                                            <p className={"coin-price-change " + (coin.market_data.price_change_percentage_24h ?
-                                                (coin.market_data.price_change_percentage_24h >= 0 ? "green" : "red") : "")}>
-                                                {coin.market_data.price_change_percentage_24h ? (coin.market_data.price_change_percentage_24h.toFixed(2) + " %") : "--"}
+                                            <p className={"coin-price-change " + (coin.market_data.price_change_percentage_24h ? (coin.market_data.price_change_percentage_24h >= 0
+                                                ? "green" : "red") : "")}
+                                            >
+                                                {coin.market_data.price_change_percentage_24h ?
+                                                    (coin.market_data.price_change_percentage_24h >= 0
+                                                        ? ("+" + coin.market_data.price_change_percentage_24h.toFixed(2) + " %")
+                                                        : (coin.market_data.price_change_percentage_24h.toFixed(2)) + " %")
+                                                    : "--"}
                                             </p>
                                         </div>
 
@@ -132,23 +136,26 @@ const Coin = () => {
 
                                         <div>
                                             <div className="data-label">Price change (7d)</div>
-                                            <p className={"coin-price-change " + (coin.market_data.price_change_percentage_7d ?
-                                                (coin.market_data.price_change_percentage_7d >= 0 ? "green" : "red") : "")}>
+                                            <p className={"coin-price-change " + (coin.market_data.price_change_percentage_7d ? (coin.market_data.price_change_percentage_7d >= 0
+                                                ? "green" : "red") : "")}
+                                            >
+
                                                 {coin.market_data.price_change_percentage_7d ? (coin.market_data.price_change_percentage_7d.toFixed(2) + " %") : "--"}
+                                            </p>
+                                        </div>
+
+
+                                        <div>
+                                            <div className="data-label">Max Supply</div>
+                                            <p className="coin-supply">
+                                                {coin.market_data.total_supply ? ("$ " + formatNumberScale(coin.market_data.total_supply.toFixed(2))) : "--"}
                                             </p>
                                         </div>
 
                                     </div>
                                 </div>
-
-
-
-
-
-
-
-
                             </div>
+
 
                         </div>}
 
@@ -157,7 +164,6 @@ const Coin = () => {
             </main>
 
 
-            <Footer />
         </>
     )
 }
