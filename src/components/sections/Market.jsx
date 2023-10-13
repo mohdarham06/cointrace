@@ -64,7 +64,7 @@ const Market = () => {
     return (
         <section className='market-section'>
 
-            <h2 className='section-headings'>Market Update</h2>
+            <h2 className='market-section-heading'>Market Update</h2>
 
             <div className="coin-list-info">
                 <div>Coin</div>

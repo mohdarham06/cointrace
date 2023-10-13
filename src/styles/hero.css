@@ -11,12 +11,6 @@
     background: linear-gradient(rgb(34, 32, 116), rgb(15, 8, 36));
 }
 
-.hero-section .hero-heading {
-    font-size: 4rem;
-    font-weight: 700;
-}
-
-
 
 /* coin-feed */
 .crypto-feed-container {

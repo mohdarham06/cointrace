@@ -119,9 +119,19 @@ a {
     color: var(--font);
 }
 
-.section-headings {
-    font-size: 2.5rem;
-    margin: 15px 0 30px;
+
+
+.section-heading {
+    color: #ffffff;
+    font-size: 4rem;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-heading span {
+    color: #4eecca;
 }
 
 
@@ -144,6 +154,11 @@ a {
 /* Market */
 .market-section {
     padding: 2rem 1.5rem 0 !important;
+}
+
+.market-section .market-section-heading {
+    font-size: 2.5rem;
+    margin: 15px 0 30px;
 }
 
 .coin-list-info {
@@ -344,45 +359,53 @@ a {
 
 
 
-
-
-
-
-
-/* Footer */
-footer {
-    /* background: ; */
-    color: white;
-    width: 100%;
-    height: 22rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.footer-content {
+/* join */
+.join-section {
+    padding: 10rem 1.5rem !important;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
 }
 
-
-
-.social-icons {
+.join-section .join-content {
     display: flex;
-    flex-direction: row;
-    gap: 2.2rem;
-    font-size: 1.8rem;
+    flex-direction: column;
+    align-items: center;
 }
 
-.footer-text {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    font-size: 1.1rem;
-    cursor: default;
+.join-content .section-heading {
+    padding-bottom: 1.4rem;
 }
+
+.join-content .join-p {
+    font-size: 1.3rem;
+    padding-bottom: 5rem;
+}
+
+.join-content .join-button {
+    display: inline-block;
+    background-color: #7925ff;
+    padding: 1.5rem 2.5rem;
+    border-radius: 3rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

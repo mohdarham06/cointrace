@@ -54,7 +54,7 @@ const Hero = () => {
     return (
         // remove main
         <section className='hero-section'>
-            <h1 className='hero-heading'>
+            <h1 className='section-heading'>
                 TRACK AND TRADE
                 <br />
                 <span>CRYPTO CURRENCIES</span>
