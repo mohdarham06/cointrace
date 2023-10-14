@@ -89,60 +89,6 @@ a {
 
 
 
-/* Header */
-header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.8rem 1.5rem !important;
-
-}
-
-header .brand {
-    font-size: 1.6rem;
-    font-weight: 600;
-}
-
-header nav ul {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    gap: 2.2rem;
-    font-size: 1.1rem;
-    font-weight: 600;
-    white-space: nowrap;
-}
-
-.header-ul li {
-    cursor: pointer;
-    transition: all 150ms ease-in-out;
-}
-
-.header-ul li:hover,
-.header-ul li:active {
-    color: #824cff;
-}
-
-header .social-icons {
-    display: flex;
-    flex-direction: row;
-    font-size: 1.5rem;
-    gap: 0.8rem;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* Market */
