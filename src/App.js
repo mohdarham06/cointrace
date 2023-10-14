@@ -4,6 +4,7 @@
 import Header from './components/sections/Header';
 import Home from './Pages/Home';
 import Coin from './Pages/Coin';
+import NotFound from './Pages/NotFound';
 
 import { Routes, Route } from 'react-router-dom';
 
@@ -24,6 +25,9 @@ function App() {
 
                 <Route path='/coin/:coinId' element={<Coin />}>
                 </Route>
+
+                <Route path='*' element={<NotFound />} />
+
 
             </Routes>
         </>

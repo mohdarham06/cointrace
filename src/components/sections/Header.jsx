@@ -17,9 +17,9 @@ const Header = () => {
             <nav>
                 <ul className='header-ul'>
                     <li> <Link to='/'>Home</Link> </li>
-                    <li> <Link to='/market'>Market</Link> </li>
-                    <li> <Link to='/'>Choose Us</Link> </li>
-                    <li> <Link to='/'>Join</Link> </li>
+                    <li>Market</li>
+                    <li>Choose Us</li>
+                    <li>Join</li>
                 </ul>
             </nav>
 
