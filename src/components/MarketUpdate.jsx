@@ -1,6 +1,6 @@
 import React from 'react'
 
-import MissingImage from '../images/missingimage.png';
+import MissingImage from '../assets/missingimage.png';
 
 import { Link } from 'react-router-dom';
 

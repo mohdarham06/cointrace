@@ -2,11 +2,11 @@ import React from 'react'
 
 import Loader from '../Loader';
 
+import '../../styles/hero.css'
+
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-
-import '../../styles/hero.css'
 
 
 
