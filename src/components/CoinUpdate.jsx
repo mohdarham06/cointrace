@@ -1,6 +1,6 @@
 import React from 'react'
 
-
+import MissingImage from '../images/missingimage.png';
 
 const CoinUpdate = ({ coin }) => {
 
@@ -22,13 +22,15 @@ const CoinUpdate = ({ coin }) => {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 
-    
+
     return (
         <div className="coin-container">
 
             <div className='coin-info'>
                 <div>
-                    {coin.image ? <img className="coin-icon" src={coin.image.large} alt={coin.id} /> : null}
+                    {coin.image ?
+                        <img className="coin-icon" src={coin.image.large ? coin.image.large : MissingImage} alt={coin.id} />
+                        : <img className="coin-icon" src={MissingImage} alt={coin.id} />}
                 </div>
 
                 <div className="coin-name">{coin.name ? coin.name : "--"}</div>

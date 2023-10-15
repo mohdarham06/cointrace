@@ -1,5 +1,7 @@
 import React from 'react'
 
+import MissingImage from '../images/missingimage.png';
+
 import { Link } from 'react-router-dom';
 
 
@@ -32,7 +34,7 @@ const MarketUpdate = ({ cryptoData }) => {
                         key={coin.id} >
 
                         <span>
-                            {coin.image ? <img className='coin-icon' src={coin.image} alt={coin.id} /> : null}
+                            <img className='coin-icon' src={coin.image ? coin.image : MissingImage} alt={coin.id} /> 
                             <div>
                                 <div className='coin-name'>{coin.name ? coin.name : "--"}</div>
                                 <div className='coin-symbol'>{coin.symbol ? (coin.symbol.toUpperCase()) : null}</div>
