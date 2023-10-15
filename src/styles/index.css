@@ -12,6 +12,30 @@
     box-sizing: border-box;
 }
 
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #53d0c1 #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 14px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #40b8aa;
+    border-radius: 20px;
+    border: 2px solid #ffffff;
+}
+
+
+
 html {
     font-size: 100%;
     scroll-behavior: smooth;
