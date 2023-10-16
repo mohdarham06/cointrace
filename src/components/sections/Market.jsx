@@ -3,6 +3,9 @@ import React from 'react'
 import MarketUpdate from '../MarketUpdate'
 import Loader from '../Loader'
 
+import { MdOutlineArrowBackIos } from 'react-icons/md';
+import { MdOutlineArrowForwardIos } from 'react-icons/md';
+
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -75,26 +78,30 @@ const Market = () => {
 
             {cryptoLoading && <Loader />}
             <MarketUpdate cryptoData={cryptoData} />
-            
+
 
 
             <div className="pagination-container">
-                {/* <button className='previous-pagination'
-                    onClick={() => {
-                        if (currentPage <= 1) return;
-                        setCurrentPage(currentPage - 1)
-                    }}>
-                    Previous {currentPage}
-                </button> */}
 
-                {paginationButtons}
+                <div className="pagination-box">
+                    <button className='pagination previous-pagination'
+                        onClick={() => {
+                            if (currentPage <= 1) return;
+                            setCurrentPage(currentPage - 1)
+                        }}>
+                        <MdOutlineArrowBackIos />
+                    </button>
 
-                {/* <button className='next-pagination'
-                    onClick={() => {
-                        setCurrentPage(currentPage + 1)
-                    }}>
-                    Next {currentPage}
-                </button> */}
+                    {paginationButtons}
+
+                    <button className='pagination next-pagination'
+                        onClick={() => {
+                            setCurrentPage(currentPage + 1)
+                        }}>
+                        <MdOutlineArrowForwardIos />
+                    </button>
+                </div>
+                
             </div>
         </section>
     )
