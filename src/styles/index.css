@@ -232,7 +232,6 @@ a {
 .pagination-box button:hover,
 .pagination-box button:active {
     background: rgba(110, 102, 226, 0.6);
-
 }
 
 .pagination-container .number-pagination {
@@ -259,13 +258,12 @@ a {
 
 
 /* Previous/Next pagination */
-.pagination-container .pagination {
+.pagination-container .arrow-pagination {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 2.8rem;
     height: 2.8rem;
-    border-radius: 50% 0 0 50%;
     font-size: 1.5rem;
     background: #442e92;
     color: #fff;

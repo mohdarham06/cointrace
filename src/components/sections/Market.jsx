@@ -93,7 +93,7 @@ const Market = () => {
                 <div className="pagination-container">
 
                     <div className="pagination-box">
-                        <button className='pagination previous-pagination'
+                        <button className='arrow-pagination previous-pagination'
                             onClick={() => {
                                 if (currentPage <= 1) return;
                                 setCurrentPage(currentPage - 1)
@@ -103,7 +103,7 @@ const Market = () => {
 
                         {paginationButtons}
 
-                        <button className='pagination next-pagination'
+                        <button className='arrow-pagination next-pagination'
                             onClick={() => {
                                 setCurrentPage(currentPage + 1)
                             }}>

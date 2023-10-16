@@ -95,11 +95,14 @@ const CoinUpdate = ({ coin }) => {
 
                         <div>
                             <div className="data-label">Price change (7d)</div>
-                            <p className={"coin-price-change " + (coin.market_data.price_change_percentage_7d ? (coin.market_data.price_change_percentage_7d >= 0
-                                ? "green" : "red") : "")}
+                            <p className={"coin-price-change " + (coin.market_data.price_change_percentage_7d ?
+                                (coin.market_data.price_change_percentage_7d >= 0 ? "green" : "red") : "")}
                             >
-
-                                {coin.market_data.price_change_percentage_7d ? (coin.market_data.price_change_percentage_7d.toFixed(2) + " %") : "--"}
+                                {coin.market_data.price_change_percentage_7d ?
+                                    (coin.market_data.price_change_percentage_7d >= 0
+                                        ? ("+" + coin.market_data.price_change_percentage_7d.toFixed(2) + " %")
+                                        : (coin.market_data.price_change_percentage_7d.toFixed(2) + " %")
+                                    ) : "--"}
                             </p>
                         </div>
 
