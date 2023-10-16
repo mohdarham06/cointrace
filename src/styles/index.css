@@ -137,6 +137,10 @@ a {
     white-space: nowrap;
 }
 
+/* .market-section .coin-list {
+    display: flex;
+    flex-direction: column;
+} */
 
 .coin-list .coin {
     display: flex;
@@ -223,10 +227,10 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 3.3rem;
-    height: 3.3rem;
+    width: 3rem;
+    height: 3rem;
     border-radius: 12px;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     background: rgba(120, 114, 202, 0.3);
     color: #fff;
 }
@@ -247,8 +251,8 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 3.3rem;
-    height: 3.3rem;
+    width: 3rem;
+    height: 3rem;
     border-radius: 50% 0 0 50%;
     font-size: 1.5rem;
     background: #442e92;

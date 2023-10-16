@@ -12,9 +12,9 @@ import axios from 'axios';
 
 // cryptoData from App
 const Market = () => {
-    const [currentPage, setCurrentPage] = useState(1)
     const [cryptoData, setCryptoData] = useState([]);
     const [cryptoLoading, setCryptoLoading] = useState(true);
+    const [currentPage, setCurrentPage] = useState(1);
 
 
 
@@ -49,18 +49,26 @@ const Market = () => {
     }, [currentPage])
 
 
+    // Pagination Buttons
     const paginationButtons = [];
-    for (let i = 1; i <= 5; i++) {
-        paginationButtons.push(
-            <button
-                key={i}
-                onClick={() => setCurrentPage(i)}
-                className={'number-pagination ' + (i === currentPage ? 'activePagi' : '')}
-            >
-                {i}
-            </button>
-        )
+    const maxButtons = 5;
+    const startPage = Math.max(1, (currentPage - Math.floor(maxButtons / 2)));
+    const endPage = startPage + maxButtons - 1;
+
+    for (let i = startPage; i <= endPage; i++) {
+        if (i > 0) {
+            paginationButtons.push(
+                <button
+                    key={i}
+                    onClick={() => setCurrentPage(i)}
+                    className={'number-pagination ' + (i === currentPage ? 'activePagi' : '')}
+                >
+                    {i}
+                </button>
+            );
+        }
     }
+
 
 
 
@@ -101,7 +109,7 @@ const Market = () => {
                         <MdOutlineArrowForwardIos />
                     </button>
                 </div>
-                
+
             </div>
         </section>
     )
