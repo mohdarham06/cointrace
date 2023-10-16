@@ -74,40 +74,43 @@ const Market = () => {
 
     return (
         <section className='market-section'>
+            <div className="market-container">
 
-            <h2 className='market-section-heading'>Market Update</h2>
+                <h2 className='market-section-heading'>Market Update</h2>
 
-            <div className="coin-list-info">
-                <div>Coin</div>
-                <div>Price</div>
-                <div>24h Change</div>
-                <div>Market Cap</div>
-            </div>
+                <div className="coin-list-info">
+                    <div>Coin</div>
+                    <div>Price</div>
+                    <div>24h Change</div>
+                    <div>Market Cap</div>
+                </div>
 
-            {cryptoLoading && <Loader />}
-            <MarketUpdate cryptoData={cryptoData} />
+                {cryptoLoading && <Loader />}
+                <MarketUpdate cryptoData={cryptoData} />
 
 
 
-            <div className="pagination-container">
+                <div className="pagination-container">
 
-                <div className="pagination-box">
-                    <button className='pagination previous-pagination'
-                        onClick={() => {
-                            if (currentPage <= 1) return;
-                            setCurrentPage(currentPage - 1)
-                        }}>
-                        <MdOutlineArrowBackIos />
-                    </button>
+                    <div className="pagination-box">
+                        <button className='pagination previous-pagination'
+                            onClick={() => {
+                                if (currentPage <= 1) return;
+                                setCurrentPage(currentPage - 1)
+                            }}>
+                            <MdOutlineArrowBackIos />
+                        </button>
 
-                    {paginationButtons}
+                        {paginationButtons}
 
-                    <button className='pagination next-pagination'
-                        onClick={() => {
-                            setCurrentPage(currentPage + 1)
-                        }}>
-                        <MdOutlineArrowForwardIos />
-                    </button>
+                        <button className='pagination next-pagination'
+                            onClick={() => {
+                                setCurrentPage(currentPage + 1)
+                            }}>
+                            <MdOutlineArrowForwardIos />
+                        </button>
+                    </div>
+
                 </div>
 
             </div>

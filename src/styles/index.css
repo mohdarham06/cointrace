@@ -118,6 +118,13 @@ a {
 /* Market */
 .market-section {
     padding: 2rem 1.5rem 0 !important;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.market-section .market-container {
+    max-width: 1120px;
 }
 
 .market-section .market-section-heading {
@@ -126,44 +133,47 @@ a {
 }
 
 .coin-list-info {
+    background: #7925ff;
     display: grid;
     grid-template-columns: 5fr 4fr 4fr 1fr;
     gap: 1.2rem;
     font-size: 1.4rem;
     font-weight: 600;
-    background: #7925ff;
     padding: 1rem;
-    border-radius: 8px 8px 0 0;
+    border-radius: 12px 12px 0 0;
     white-space: nowrap;
 }
 
-/* .market-section .coin-list {
+.market-section .coin-list {
     display: flex;
     flex-direction: column;
-} */
+    gap: 1rem;
+    font-size: 1.2rem;
+
+}
 
 .coin-list .coin {
+    background: #1b173f;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     gap: 1.2rem;
-    padding: 1.5rem 1rem;
-    border-bottom: 1px solid #f3f2f4;
-    font-size: 1.3rem;
+    border-radius: 10px;
+    padding: 1.2rem 1rem;
     cursor: pointer;
     white-space: nowrap;
 }
 
 .coin-list .coin:hover,
 .coin-list .coin:active {
-    background-color: #2a124e;
+    background: #271f61;
 }
 
 
 .coin .coin-icon {
-    width: 3rem;
-    height: 3rem;
+    width: 2.8rem;
+    height: 2.8rem;
 }
 
 .coin span {
@@ -194,12 +204,13 @@ a {
 
 
 
+
 /* pagination */
 .market-section .pagination-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
 }
 
 .pagination-box {
@@ -209,7 +220,7 @@ a {
     gap: 1.2rem;
     padding: 1rem 1.2rem;
     border-radius: 14px;
-    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 10px 0 rgba(150, 148, 168, 0.4);
 }
 
 .pagination-box button {
@@ -220,15 +231,16 @@ a {
 
 .pagination-box button:hover,
 .pagination-box button:active {
-    background: rgba(138, 110, 241, 0.6);
+    background: rgba(110, 102, 226, 0.6);
+
 }
 
 .pagination-container .number-pagination {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 3rem;
-    height: 3rem;
+    width: 2.8rem;
+    height: 2.8rem;
     border-radius: 12px;
     font-size: 1.2rem;
     background: rgba(120, 114, 202, 0.3);
@@ -251,8 +263,8 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 3rem;
-    height: 3rem;
+    width: 2.8rem;
+    height: 2.8rem;
     border-radius: 50% 0 0 50%;
     font-size: 1.5rem;
     background: #442e92;
