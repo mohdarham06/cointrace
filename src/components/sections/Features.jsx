@@ -5,8 +5,8 @@ const Features = () => {
         <section className='features-section'>
             <div className="">
                 <h2 className="section-heading">
-                    Why
-                    <span>We are the Best</span>
+                    WHY
+                    <span>WE ARE THE BEST</span>
                 </h2>
 
 

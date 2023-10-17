@@ -2,9 +2,9 @@
 
 
 import Header from './components/sections/Header';
-import Home from './Pages/Home';
-import Coin from './Pages/Coin';
-import NotFound from './Pages/NotFound';
+import Home from './pages/Home';
+import Coin from './pages/Coin';
+import NotFound from './pages/NotFound';
 
 import { Routes, Route } from 'react-router-dom';
 

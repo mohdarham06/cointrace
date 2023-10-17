@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Mooli&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-/*? new font */
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100;200;300;400;500;600;700&display=swap');
 
 /* UNIVERSAL SELECTOR */
 * {
-    font-family: 'Mooli', 'Ubuntu', "Fira sans", sans-serif;
+    font-family: 'Onest', sans-serif;
 
     /** It will remove all default 
     ** margins and paddings */
@@ -16,7 +16,7 @@
 /* Firefox */
 * {
     scrollbar-width: thin;
-    scrollbar-color: #53d0c1 #ffffff;
+    scrollbar-color: var(--scrollbar) #ffffff;
 }
 
 /* Chrome, Edge, and Safari */
@@ -29,7 +29,7 @@
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: #40b8aa;
+    background-color: var(--scrollbar);
     border-radius: 20px;
     border: 2px solid #ffffff;
 }
@@ -47,8 +47,11 @@ html {
     --background: rgb(15, 8, 36);
     --font: #ffffff;
     --header: #000000;
+    --scrollbar: #40b8aa;
     --links: #8696b6;
     --footer: #08060f;
+    --purple: #7925ff;
+    --item-backround: #1b173f;
 }
 
 
@@ -62,6 +65,7 @@ body {
 }
 
 #root {
+    position: relative;
     width: 100%;
     max-width: 1300px;
     overflow: hidden;
@@ -69,7 +73,6 @@ body {
     flex-direction: column;
     /* border: 1px solid red; */
 }
-
 
 
 
@@ -94,7 +97,7 @@ a {
 .section-heading {
     color: #ffffff;
     font-size: 4rem;
-    font-weight: 700;
+    font-weight: 600;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -133,7 +136,7 @@ a {
 }
 
 .coin-list-info {
-    background: #7925ff;
+    background: var(--purple);
     display: grid;
     grid-template-columns: 5fr 4fr 4fr 1fr;
     gap: 1.2rem;
@@ -153,7 +156,7 @@ a {
 }
 
 .coin-list .coin {
-    background: #1b173f;
+    background: var(--item-backround);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -248,12 +251,12 @@ a {
 
 .number-pagination.activePagi {
     color: #ffffff;
-    background: #7f30fd;
+    background: var(--purple);
 }
 
 .number-pagination.activePagi:hover,
 .number-pagination.activePagi:active {
-    background: #7f30fd;
+    background: var(--purple);
 }
 
 
@@ -314,7 +317,7 @@ a {
 
 .join-content .join-button {
     display: inline-block;
-    background-color: #7925ff;
+    background-color: var(--purple);
     padding: 1.5rem 2.5rem;
     border-radius: 3rem;
     font-size: 1.6rem;
