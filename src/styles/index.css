@@ -208,7 +208,7 @@ a {
 
 
 
-/* pagination */
+/* Pagination */
 .market-section .pagination-container {
     display: flex;
     flex-direction: row;
@@ -292,7 +292,48 @@ a {
 
 
 
-/* join */
+/* Features */
+.features-section {
+    padding: 0 1.5rem !important;
+}
+
+.features-section .section-heading {
+    margin-bottom: 5rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.features-grid .grid-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.features-grid .feature {
+    background: #1d163f;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid #4c446e;
+    
+}
+
+.feature .feature-icon {
+    font-size: 1.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+/* Join */
 .join-section {
     padding: 10rem 1.5rem !important;
     display: flex;

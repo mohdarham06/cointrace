@@ -45,7 +45,7 @@ const CoinUpdate = ({ coin }) => {
 
 
             <div className='coin-data'>
-                <h3>Market Stats</h3>
+                <h2 className='data-heading'>Market Stats</h2>
 
 
                 <div className="data-grid">

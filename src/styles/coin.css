@@ -24,7 +24,7 @@
 }
 
 
-.coin-container {
+.coin-section .coin-container {
     position: relative;
     background: #1b173f;
     border-radius: 34px;
@@ -70,16 +70,20 @@
     font-size: 1.3rem;
 }
 
+.coin-data .data-heading {
+    font-size: 1.8rem;
+}
+
 .coin-data .data-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin-top: 3rem;
+    margin-top: 2.6rem;
 }
 
 .coin-data .data-grid .grid-cell {
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 2.4rem;
 }
 
 .coin-data .data-label {
