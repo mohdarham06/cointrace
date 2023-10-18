@@ -12,6 +12,7 @@
 
 .coin-section .back-button {
     position: absolute;
+    z-index: 1;
     top: 6rem;
     left: 2rem;
     color: #fff;
