@@ -7,9 +7,10 @@ import { MdOutlineArrowBackIos } from 'react-icons/md';
 import { MdOutlineArrowForwardIos } from 'react-icons/md';
 
 import { useState, useEffect } from 'react';
+import { useSearchParams } from "react-router-dom";
+
 import axios from 'axios';
 
-import { useParams, useSearchParams } from "react-router-dom";
 
 
 
@@ -17,12 +18,11 @@ import { useParams, useSearchParams } from "react-router-dom";
 const Market = () => {
     const [cryptoData, setCryptoData] = useState([]);
     const [cryptoLoading, setCryptoLoading] = useState(true);
-    // const [currentPage, setCurrentPage] = useState(1);
 
-    const [currentPageParams, setCurrentPageParams] = useSearchParams({ marketpage: 1 });
-    const currentPage = Number(currentPageParams.get("marketpage"))
+    const [marketPageParams, setMarketPageParams] = useSearchParams({ marketpage: 1 });
+    const currentPage = Number(marketPageParams.get("marketpage")) || 1;
     console.log(currentPage)
-    console.log(currentPageParams.get("marketpage"))
+
 
 
     const options = {
@@ -67,7 +67,7 @@ const Market = () => {
             paginationButtons.push(
                 <button
                     key={i}
-                    onClick={() => setCurrentPageParams({ marketpage: i })}
+                    onClick={() => setMarketPageParams({marketpage : i})}
                     className={'number-pagination ' + (i === currentPage ? 'activePagi' : '')}
                 >
                     {i}
@@ -84,7 +84,6 @@ const Market = () => {
             <div className="market-container">
 
                 <h2 className='market-section-heading'>Market Update</h2>
-
                 <div className="coin-list-info">
                     <div>Coin</div>
                     <div>Price</div>
@@ -92,33 +91,37 @@ const Market = () => {
                     <div>Market Cap</div>
                 </div>
 
+
                 {cryptoLoading && <Loader />}
                 <MarketData cryptoData={cryptoData} />
 
 
 
                 <div className="pagination-container">
-
                     <div className="pagination-box">
+
                         <button className='arrow-pagination previous-pagination'
                             onClick={() => {
                                 if (currentPage <= 1) return;
-                                setCurrentPageParams(currentPage - 1)
+                                setMarketPageParams({marketpage: currentPage - 1})
                             }}>
                             <MdOutlineArrowBackIos />
                         </button>
 
+
                         {paginationButtons}
+
 
                         <button className='arrow-pagination next-pagination'
                             onClick={() => {
-                                setCurrentPageParams(currentPage + 1)
+                                setMarketPageParams({marketpage: currentPage + 1})
                             }}>
                             <MdOutlineArrowForwardIos />
                         </button>
-                    </div>
 
+                    </div>
                 </div>
+
 
             </div>
         </section>
