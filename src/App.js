@@ -20,10 +20,11 @@ function App() {
             <Header />
 
             <Routes>
-                <Route path='/' element={<Home />}>
-                </Route>
+                <Route path='/' element={<Home />} />
 
-                <Route path='/coin/:coinId' element={<Coin />}>
+                <Route path='/coin' >
+                    <Route index element={<NotFound />} />
+                    <Route path=':coinId' element={<Coin />} />
                 </Route>
 
                 <Route path='*' element={<NotFound />} />

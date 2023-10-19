@@ -1,6 +1,6 @@
 import React from 'react'
 
-import MarketUpdate from '../MarketUpdate'
+import MarketData from '../MarketData'
 import Loader from '../Loader'
 
 import { MdOutlineArrowBackIos } from 'react-icons/md';
@@ -9,13 +9,20 @@ import { MdOutlineArrowForwardIos } from 'react-icons/md';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import { useParams, useSearchParams } from "react-router-dom";
+
+
 
 // cryptoData from App
 const Market = () => {
     const [cryptoData, setCryptoData] = useState([]);
     const [cryptoLoading, setCryptoLoading] = useState(true);
-    const [currentPage, setCurrentPage] = useState(1);
+    // const [currentPage, setCurrentPage] = useState(1);
 
+    const [currentPageParams, setCurrentPageParams] = useSearchParams({ marketpage: 1 });
+    const currentPage = Number(currentPageParams.get("marketpage"))
+    console.log(currentPage)
+    console.log(currentPageParams.get("marketpage"))
 
 
     const options = {
@@ -60,7 +67,7 @@ const Market = () => {
             paginationButtons.push(
                 <button
                     key={i}
-                    onClick={() => setCurrentPage(i)}
+                    onClick={() => setCurrentPageParams({ marketpage: i })}
                     className={'number-pagination ' + (i === currentPage ? 'activePagi' : '')}
                 >
                     {i}
@@ -86,7 +93,7 @@ const Market = () => {
                 </div>
 
                 {cryptoLoading && <Loader />}
-                <MarketUpdate cryptoData={cryptoData} />
+                <MarketData cryptoData={cryptoData} />
 
 
 
@@ -96,7 +103,7 @@ const Market = () => {
                         <button className='arrow-pagination previous-pagination'
                             onClick={() => {
                                 if (currentPage <= 1) return;
-                                setCurrentPage(currentPage - 1)
+                                setCurrentPageParams(currentPage - 1)
                             }}>
                             <MdOutlineArrowBackIos />
                         </button>
@@ -105,7 +112,7 @@ const Market = () => {
 
                         <button className='arrow-pagination next-pagination'
                             onClick={() => {
-                                setCurrentPage(currentPage + 1)
+                                setCurrentPageParams(currentPage + 1)
                             }}>
                             <MdOutlineArrowForwardIos />
                         </button>

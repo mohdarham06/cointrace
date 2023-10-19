@@ -1,13 +1,21 @@
 import React from 'react'
 
+import '../styles/notfound.css'
+
+import BackButton from '../components/BackButton'
+
 
 const NotFound = () => {
     return (
         <main>
-            <section>
+            <section className='notfound-section'>
+
+                <BackButton />
 
                 <h1 className='section-heading'>
-                    Sorry, <span>Page not found!</span>
+                    Sorry,
+                    <br />
+                    <span>Page not found!</span>
                 </h1>
 
             </section>

@@ -1,17 +1,15 @@
 import React from 'react'
 
 import Loader from '../Loader';
-import CoinUpdate from '../CoinUpdate';
+import CoinData from '../CoinData';
 
 import '../../styles/coin.css'
 
-import { BiArrowBack } from "react-icons/bi";
-
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 
 import axios from 'axios';
+import BackButton from '../BackButton';
 
 
 const CoinSection = () => {
@@ -20,11 +18,6 @@ const CoinSection = () => {
     const [coin, setCoin] = useState([]);
     const [coinLoading, setCoinLoading] = useState(true);
 
-    const navigate = useNavigate();
-
-    const navigateBack = () => {
-        navigate(-1);
-    }
 
 
     const options = {
@@ -65,11 +58,9 @@ const CoinSection = () => {
 
             {coinLoading && <Loader />}
 
-            <div className='back-button' onClick={navigateBack}>
-                <BiArrowBack />
-            </div>
+            <BackButton />
 
-            {coinLoading ? null : <CoinUpdate coin={coin} />}
+            {coinLoading ? null : <CoinData coin={coin} />}
 
         </section>
 

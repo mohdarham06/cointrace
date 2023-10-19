@@ -10,7 +10,7 @@
     justify-content: center;
 }
 
-.coin-section .back-button {
+.back-button {
     position: absolute;
     z-index: 1;
     top: 6rem;
@@ -19,8 +19,8 @@
     font-size: 3rem;
     transition: all 200ms ease-in-out;
 }
-.coin-section .back-button:hover,
-.coin-section .back-button:active {
+.back-button:hover,
+.back-button:active {
     color: #8364f0;
 }
 
