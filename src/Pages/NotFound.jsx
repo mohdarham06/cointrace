@@ -1,6 +1,5 @@
 import React from 'react'
 
-import '../styles/notfound.css'
 
 import BackButton from '../components/BackButton'
 
@@ -8,9 +7,9 @@ import BackButton from '../components/BackButton'
 const NotFound = () => {
     return (
         <main>
+            <BackButton />
+            
             <section className='notfound-section'>
-
-                <BackButton />
 
                 <h1 className='section-heading'>
                     Sorry,

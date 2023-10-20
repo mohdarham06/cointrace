@@ -4,22 +4,20 @@ import MissingImage from '../assets/missingimage.png';
 
 import { Link } from 'react-router-dom';
 
+// cryptoData from MarketDataFetcher
+const CryptoList = ({ cryptoData }) => {
 
-
-// cryptoData from Market
-const MarketUpdate = ({ cryptoData }) => {
-
-    const formatNumberScale = (marketCap) => {
-        if (marketCap >= 1e12) {
-            return `${(marketCap / 1e12).toFixed(2)} T`; // Convert to trillions
-        } else if (marketCap >= 1e9) {
-            return `${(marketCap / 1e9).toFixed(2)} B`; // Convert to billions
-        } else if (marketCap >= 1e6) {
-            return `${(marketCap / 1e6).toFixed(2)} M`; // Convert to millions
-        } else if (marketCap >= 1e3) {
-            return `${(marketCap / 1e3).toFixed(2)} K`; // Convert to thousands
+    const formatNumberScale = (number) => {
+        if (number >= 1e12) {
+            return `${(number / 1e12).toFixed(2)} T`; // Convert to trillions
+        } else if (number >= 1e9) {
+            return `${(number / 1e9).toFixed(2)} B`; // Convert to billions
+        } else if (number >= 1e6) {
+            return `${(number / 1e6).toFixed(2)} M`; // Convert to millions
+        } else if (number >= 1e3) {
+            return `${(number / 1e3).toFixed(2)} K`; // Convert to thousands
         } else {
-            return `${marketCap}`; // Keep it as is if less than 1,000
+            return `${number}`; // Keep it as is if less than 1,000
         }
     };
 
@@ -64,5 +62,5 @@ const MarketUpdate = ({ cryptoData }) => {
     )
 }
 
-export default MarketUpdate
+export default CryptoList
 

@@ -2,19 +2,20 @@ import React from 'react'
 
 import MissingImage from '../assets/missingimage.png';
 
-const CoinUpdate = ({ coin }) => {
+// coin from CoinDataFetcher
+const CoinInfo = ({ coin }) => {
 
-    const formatNumberScale = (marketCap) => {
-        if (marketCap >= 1e12) {
-            return `${(marketCap / 1e12).toFixed(2)} T`; // Convert to trillions
-        } else if (marketCap >= 1e9) {
-            return `${(marketCap / 1e9).toFixed(2)} B`; // Convert to billions
-        } else if (marketCap >= 1e6) {
-            return `${(marketCap / 1e6).toFixed(2)} M`; // Convert to millions
-        } else if (marketCap >= 1e3) {
-            return `${(marketCap / 1e3).toFixed(2)} K`; // Convert to thousands
+    const formatNumberScale = (number) => {
+        if (number >= 1e12) {
+            return `${(number / 1e12).toFixed(2)} T`; // Convert to trillions
+        } else if (number >= 1e9) {
+            return `${(number / 1e9).toFixed(2)} B`; // Convert to billions
+        } else if (number >= 1e6) {
+            return `${(number / 1e6).toFixed(2)} M`; // Convert to millions
+        } else if (number >= 1e3) {
+            return `${(number / 1e3).toFixed(2)} K`; // Convert to thousands
         } else {
-            return `${marketCap}`; // Keep it as is if less than 1,000
+            return `${number}`; // Keep it as is if less than 1,000
         }
     };
 
@@ -57,7 +58,6 @@ const CoinUpdate = ({ coin }) => {
                             </p>
                         </div>
 
-
                         <div>
                             <div className="data-label">Price change (24h)</div>
                             <p className={"coin-price-change " + (coin.market_data.price_change_percentage_24h ?
@@ -71,7 +71,6 @@ const CoinUpdate = ({ coin }) => {
                             </p>
                         </div>
 
-
                         <div>
                             <div className="data-label">Circulating Supply</div>
                             <p className="coin-supply">
@@ -83,7 +82,6 @@ const CoinUpdate = ({ coin }) => {
 
 
 
-
                     <div className="grid-cell">
                         <div>
                             <div className="data-label">Market cap</div>
@@ -91,7 +89,6 @@ const CoinUpdate = ({ coin }) => {
                                 {coin.market_data.market_cap.usd ? ("$ " + formatNumberScale(coin.market_data.market_cap.usd.toFixed(2))) : "--"}
                             </p>
                         </div>
-
 
                         <div>
                             <div className="data-label">Price change (7d)</div>
@@ -106,14 +103,12 @@ const CoinUpdate = ({ coin }) => {
                             </p>
                         </div>
 
-
                         <div>
                             <div className="data-label">Max Supply</div>
                             <p className="coin-supply">
                                 {coin.market_data.total_supply ? ("$ " + formatNumberScale(coin.market_data.total_supply.toFixed(2))) : "--"}
                             </p>
                         </div>
-
                     </div>
                 </div>
 
@@ -125,4 +120,4 @@ const CoinUpdate = ({ coin }) => {
     )
 }
 
-export default CoinUpdate
+export default CoinInfo

@@ -1,16 +1,22 @@
 
 
-
-import Header from './components/sections/Header';
+import Header from './components/common/Header';
 import Home from './pages/Home';
-import Coin from './pages/Coin';
+import CoinPage from './pages/CoinPage';
 import NotFound from './pages/NotFound';
+
+import './styles/header.css';
+import './styles/hero.css';
+import './styles/features.css';
+import './styles/coin.css';
+import './styles/footer.css';
+import './styles/notfound.css';
+import './styles/backbutton.css';
+import './styles/loader.css';
+
 
 import { Routes, Route } from 'react-router-dom';
 
-
-// import { useState, useEffect } from 'react';
-// import axios from 'axios';
 
 
 function App() {
@@ -24,7 +30,7 @@ function App() {
 
                 <Route path='/coin' >
                     <Route index element={<NotFound />} />
-                    <Route path=':coinId' element={<Coin />} />
+                    <Route path=':coinId' element={<CoinPage />} />
                 </Route>
 
                 <Route path='*' element={<NotFound />} />

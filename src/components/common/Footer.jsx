@@ -5,7 +5,6 @@ import { FiTwitter } from "react-icons/fi";
 import { FiFacebook } from "react-icons/fi";
 import { FiYoutube } from "react-icons/fi";
 
-import '../../styles/footer.css'
 
 // import { RiInstagramLine  } from "react-icons/ri";
 // import { RiTwitterLine } from "react-icons/ri";

@@ -2,9 +2,9 @@ import React from 'react'
 
 import Hero from '../components/sections/Hero';
 import Market from '../components/sections/Market';
-import Join from '../components/sections/Join';
-import Footer from '../components/sections/Footer';
 import Features from '../components/sections/Features';
+import Join from '../components/sections/Join';
+import Footer from '../components/common/Footer';
 
 const Home = () => {
     return (

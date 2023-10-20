@@ -1,60 +1,20 @@
 import React from 'react'
 
-import MarketData from '../MarketData'
-import Loader from '../Loader'
+import MarketDataFetcher from '../../services/MarketDataFetcher';
 
 import { MdOutlineArrowBackIos } from 'react-icons/md';
 import { MdOutlineArrowForwardIos } from 'react-icons/md';
 
-import { useState, useEffect } from 'react';
 import { useSearchParams } from "react-router-dom";
 
-import axios from 'axios';
 
-
-
-
-// cryptoData from App
 const Market = () => {
-    const [cryptoData, setCryptoData] = useState([]);
-    const [cryptoLoading, setCryptoLoading] = useState(true);
 
     const [marketPageParams, setMarketPageParams] = useSearchParams({ marketpage: 1 });
     const currentPage = Number(marketPageParams.get("marketpage")) || 1;
-    console.log(currentPage)
+    const perPageCoins = 10;
 
-
-
-    const options = {
-        method: 'GET',
-        url: 'https://coingecko.p.rapidapi.com/coins/markets',
-        params: {
-            vs_currency: 'usd',
-            page: currentPage,
-            per_page: '10'
-        },
-        headers: {
-            'X-RapidAPI-Key': 'd9b652efb4msh6e4040368154c25p1c68bejsn16303a787b72',
-            'X-RapidAPI-Host': 'coingecko.p.rapidapi.com'
-        }
-    }
-
-    useEffect(() => {
-        async function getMarketData() {
-            try {
-                const response = await axios.request(options);
-                console.log(response.data);
-                setCryptoData(response.data);
-                setCryptoLoading(false);
-
-            } catch (error) {
-                console.error(error);
-            }
-        }
-        getMarketData()
-        // [] at load time
-    }, [currentPage])
-
+    
 
     // Pagination Buttons
     const paginationButtons = [];
@@ -67,7 +27,7 @@ const Market = () => {
             paginationButtons.push(
                 <button
                     key={i}
-                    onClick={() => setMarketPageParams({marketpage : i})}
+                    onClick={() => setMarketPageParams({ marketpage: i })}
                     className={'number-pagination ' + (i === currentPage ? 'activePagi' : '')}
                 >
                     {i}
@@ -92,8 +52,10 @@ const Market = () => {
                 </div>
 
 
-                {cryptoLoading && <Loader />}
-                <MarketData cryptoData={cryptoData} />
+                <MarketDataFetcher
+                    currentPage={currentPage}
+                    perPageCoins={perPageCoins}
+                />
 
 
 
@@ -103,7 +65,7 @@ const Market = () => {
                         <button className='arrow-pagination previous-pagination'
                             onClick={() => {
                                 if (currentPage <= 1) return;
-                                setMarketPageParams({marketpage: currentPage - 1})
+                                setMarketPageParams({ marketpage: currentPage - 1 })
                             }}>
                             <MdOutlineArrowBackIos />
                         </button>
@@ -114,7 +76,7 @@ const Market = () => {
 
                         <button className='arrow-pagination next-pagination'
                             onClick={() => {
-                                setMarketPageParams({marketpage: currentPage + 1})
+                                setMarketPageParams({ marketpage: currentPage + 1 })
                             }}>
                             <MdOutlineArrowForwardIos />
                         </button>

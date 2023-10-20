@@ -1,25 +1,20 @@
 import React from 'react'
 
-import Loader from '../Loader';
-import CoinData from '../CoinData';
-
-import '../../styles/coin.css'
+import Loader from '../components/Loader';
+import CoinInfo from '../components/CoinInfo';
 
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 
 import axios from 'axios';
-import BackButton from '../BackButton';
 
 
-const CoinSection = () => {
-
+const CoinDataFetcher = () => {
     const { coinId } = useParams();
     const [coin, setCoin] = useState([]);
     const [coinLoading, setCoinLoading] = useState(true);
-
-
-
+    
+    
     const options = {
         method: 'GET',
         url: `https://coingecko.p.rapidapi.com/coins/${coinId}`,
@@ -36,7 +31,7 @@ const CoinSection = () => {
             'X-RapidAPI-Host': 'coingecko.p.rapidapi.com'
         }
     };
-
+    
     useEffect(() => {
         async function getCoinData() {
             try {
@@ -50,21 +45,15 @@ const CoinSection = () => {
         }
         getCoinData();
     }, [])
-
-
+    
 
     return (
-        <section className="coin-section">
-
+        <>
             {coinLoading && <Loader />}
 
-            <BackButton />
-
-            {coinLoading ? null : <CoinData coin={coin} />}
-
-        </section>
-
+            {coinLoading ? null : <CoinInfo coin={coin}/>}
+        </>
     )
 }
 
-export default CoinSection
+export default CoinDataFetcher
