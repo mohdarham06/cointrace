@@ -5,7 +5,7 @@ import React from 'react'
 const Join = () => {
 
     return (
-        <section className='join-section'>
+        <section id='join' className='join-section'>
         
             <div className="join-content">
                 <h2 className="section-heading">

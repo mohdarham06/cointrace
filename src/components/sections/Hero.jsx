@@ -50,7 +50,7 @@ const Hero = () => {
 
     return (
         // remove main
-        <section className='hero-section'>
+        <section id='home' className='hero-section'>
             <h1 className='section-heading'>
                 TRACK AND TRADE
                 <br />

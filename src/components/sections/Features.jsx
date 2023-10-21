@@ -13,7 +13,7 @@ import BitHand from '../../assets/bitcoinhand.png'
 
 const Features = () => {
     return (
-        <section className='features-section'>
+        <section id='features' className='features-section'>
             <div className="features-container">
                 <h2 className="section-heading">
                     WHY

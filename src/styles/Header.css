@@ -2,19 +2,21 @@
 
 /* Header */
 header {
-    position: fixed;
+    position: absolute;
     max-width: 1300px;
     width: 100%;
-    padding: 1.8rem 1.5rem !important;
-    background: rgb(15, 8, 36);
-    z-index: 100;
-}
-
-header .header-wrapper {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    padding: 1.8rem 1.5rem !important;
+    z-index: 100;
+}
+
+.sticky-header {
+    position: fixed;
+    background: rgb(15, 8, 36);
+    box-shadow: 0px 10px 5px 0px rgba(0, 0, 0, 0.16);
 }
 
 header .brand {
@@ -39,7 +41,7 @@ header nav ul {
 
 .header-ul li:hover,
 .header-ul li:active {
-    color: #8364f0;
+    color: #4f78ff;
 }
 
 header .social-icons {
@@ -48,6 +50,4 @@ header .social-icons {
     font-size: 1.5rem;
     gap: 0.8rem;
 }
-
-
 

@@ -34,6 +34,13 @@
     border: 2px solid #ffffff;
 }
 
+*::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scrollbar-hover);
+}
+*::-webkit-scrollbar-thumb:active {
+    background-color: var(--scrollbar-active);
+}
+
 
 
 html {
@@ -48,7 +55,9 @@ html {
     --font: #ffffff;
     --section-width: 1120px;
     --header: #000000;
-    --scrollbar: #40b8aa;
+    --scrollbar: #47beb1;
+    --scrollbar-hover: #52d1c2;
+    --scrollbar-active: #62e2d3;
     --links: #8696b6;
     --footer: #08060f;
     --purple: #7925ff;
