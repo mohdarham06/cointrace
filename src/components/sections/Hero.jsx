@@ -13,21 +13,21 @@ const Hero = () => {
     const [cryptoLoading, setCryptoLoading] = useState(true);
 
 
-    const options = {
-        method: 'GET',
-        url: 'https://coingecko.p.rapidapi.com/coins/markets',
-        params: {
-            vs_currency: 'usd',
-            page: '1',
-            per_page: '4'
-        },
-        headers: {
-            'X-RapidAPI-Key': 'd9b652efb4msh6e4040368154c25p1c68bejsn16303a787b72',
-            'X-RapidAPI-Host': 'coingecko.p.rapidapi.com'
-        }
-    }
-
     useEffect(() => {
+        const options = {
+            method: 'GET',
+            url: 'https://coingecko.p.rapidapi.com/coins/markets',
+            params: {
+                vs_currency: 'usd',
+                page: '1',
+                per_page: '4'
+            },
+            headers: {
+                'X-RapidAPI-Key': 'd9b652efb4msh6e4040368154c25p1c68bejsn16303a787b72',
+                'X-RapidAPI-Host': 'coingecko.p.rapidapi.com'
+            }
+        }
+
         async function getMarketData() {
             try {
                 const response = await axios.request(options);
@@ -40,7 +40,6 @@ const Hero = () => {
             }
         }
         getMarketData()
-        // [] at load time
     }, [])
 
 

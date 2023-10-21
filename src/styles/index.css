@@ -44,7 +44,7 @@ html {
 
 /* || ROOT || */
 :root {
-    --background: rgb(15, 8, 36);
+    --background: rgb(5, 8, 36);
     --font: #ffffff;
     --section-width: 1120px;
     --header: #000000;

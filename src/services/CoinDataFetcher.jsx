@@ -15,24 +15,24 @@ const CoinDataFetcher = () => {
     const [coinLoading, setCoinLoading] = useState(true);
     
     
-    const options = {
-        method: 'GET',
-        url: `https://coingecko.p.rapidapi.com/coins/${coinId}`,
-        params: {
-            market_data: 'true',
-            localization: 'false',
-            tickers: 'false',
-            community_data: 'false',
-            developer_data: 'false',
-            sparkline: 'false'
-        },
-        headers: {
-            'X-RapidAPI-Key': 'd9b652efb4msh6e4040368154c25p1c68bejsn16303a787b72',
-            'X-RapidAPI-Host': 'coingecko.p.rapidapi.com'
-        }
-    };
-    
     useEffect(() => {
+        const options = {
+            method: 'GET',
+            url: `https://coingecko.p.rapidapi.com/coins/${coinId}`,
+            params: {
+                market_data: 'true',
+                localization: 'false',
+                tickers: 'false',
+                community_data: 'false',
+                developer_data: 'false',
+                sparkline: 'false'
+            },
+            headers: {
+                'X-RapidAPI-Key': 'd9b652efb4msh6e4040368154c25p1c68bejsn16303a787b72',
+                'X-RapidAPI-Host': 'coingecko.p.rapidapi.com'
+            }
+        }
+
         async function getCoinData() {
             try {
                 const response = await axios.request(options);
@@ -44,7 +44,7 @@ const CoinDataFetcher = () => {
             }
         }
         getCoinData();
-    }, [])
+    }, [coinId])
     
 
     return (

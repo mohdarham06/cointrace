@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 // props from Market Section
-const MarketDataFetcher = ({ currentPage, perPageCoins }) => {
+const MarketDataFetcher = ({ currentPage }) => {
     const [cryptoData, setCryptoData] = useState([]);
     const [cryptoLoading, setCryptoLoading] = useState(true);
 
@@ -19,7 +19,7 @@ const MarketDataFetcher = ({ currentPage, perPageCoins }) => {
             params: {
                 vs_currency: 'usd',
                 page: currentPage,
-                per_page: perPageCoins
+                per_page: '10'
             },
             headers: {
                 'X-RapidAPI-Key': 'd9b652efb4msh6e4040368154c25p1c68bejsn16303a787b72',
@@ -39,7 +39,6 @@ const MarketDataFetcher = ({ currentPage, perPageCoins }) => {
             }
         }
         getMarketData()
-        // [] at load time
     }, [currentPage])
 
 

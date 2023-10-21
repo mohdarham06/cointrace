@@ -12,7 +12,6 @@ const Market = () => {
 
     const [marketPageParams, setMarketPageParams] = useSearchParams({ marketpage: 1 });
     const currentPage = Number(marketPageParams.get("marketpage")) || 1;
-    const perPageCoins = 10;
 
     
 
@@ -54,7 +53,6 @@ const Market = () => {
 
                 <MarketDataFetcher
                     currentPage={currentPage}
-                    perPageCoins={perPageCoins}
                 />
 
 
