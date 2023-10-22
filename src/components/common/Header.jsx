@@ -51,7 +51,7 @@ const Header = () => {
             </div>
 
             <nav>
-                <ul className='header-ul'>
+                <ul className='nav-ul'>
                     <li onClick={() => scrollToSection('home')}>Home</li>
                     <li onClick={() => scrollToSection('market')}>Market</li>
                     <li onClick={() => scrollToSection('features')}>Choose Us</li>

@@ -60,9 +60,10 @@ html {
     --scrollbar-active: #62e2d3;
     --links: #8696b6;
     --footer: #08060f;
-    --purple: #7925ff;
+    --blue: #4625ff;
     --gradient: linear-gradient(90deg, #4625ff 0%, #48dfbe 100%);
-    --item-backround: #1b173f;
+    --item-backround: #121744;
+    --item-backround-hover: #212264;
 }
 
 
@@ -151,7 +152,7 @@ a {
 }
 
 .coin-list-info {
-    background: var(--purple);
+    background: var(--blue);
     background: var(--gradient);
     display: grid;
     grid-template-columns: 5fr 4fr 4fr 1fr;
@@ -185,7 +186,7 @@ a {
 
 .coin-list .coin:hover,
 .coin-list .coin:active {
-    background: #271f61;
+    background: var(--item-backround-hover);
 }
 
 
@@ -249,7 +250,7 @@ a {
 
 .pagination-box button:hover,
 .pagination-box button:active {
-    background: rgba(110, 102, 226, 0.6);
+    background: rgba(82, 107, 247, 0.6);
 }
 
 .pagination-container .number-pagination {
@@ -260,18 +261,18 @@ a {
     height: 2.8rem;
     border-radius: 12px;
     font-size: 1.2rem;
-    background: rgba(120, 114, 202, 0.3);
+    background: rgba(91, 107, 255, 0.3);
     color: #fff;
 }
 
 .number-pagination.activePagi {
     color: #ffffff;
-    background: var(--purple);
+    background: var(--blue);
 }
 
 .number-pagination.activePagi:hover,
 .number-pagination.activePagi:active {
-    background: var(--purple);
+    background: var(--blue);
 }
 
 
@@ -283,7 +284,7 @@ a {
     width: 2.8rem;
     height: 2.8rem;
     font-size: 1.5rem;
-    background: #442e92;
+    background: #1d1f77;
     color: #fff;
 }
 
@@ -333,7 +334,7 @@ a {
 
 .join-content .join-button {
     display: inline-block;
-    background: var(--purple);
+    background: var(--blue);
     background: var(--gradient);
     padding: 1.2rem 2.4rem;
     border-radius: 10rem;

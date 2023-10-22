@@ -34,13 +34,13 @@ header nav ul {
     white-space: nowrap;
 }
 
-.header-ul li {
+.nav-ul li {
     cursor: pointer;
     transition: all 150ms ease-in-out;
 }
 
-.header-ul li:hover,
-.header-ul li:active {
+.nav-ul li:hover,
+.nav-ul li:active {
     color: #4f78ff;
 }
 

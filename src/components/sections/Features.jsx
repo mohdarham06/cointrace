@@ -9,7 +9,7 @@ import { BsClipboardData } from "react-icons/bs";
 import { BsLightningCharge } from "react-icons/bs";
 import { BsCollection } from "react-icons/bs";
 
-import BitHand from '../../assets/bitcoinhand.png'
+import MetaVerse from '../../assets/metaverse.png'
 
 const Features = () => {
     return (
@@ -41,7 +41,7 @@ const Features = () => {
                     </div>
 
                     <div className="grid-cell">
-                        <img className="feature-image" src={BitHand} alt="" />
+                        <img className="feature-image" src={MetaVerse} alt="" />
                     </div>
 
                     <div className="grid-cell">

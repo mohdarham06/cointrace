@@ -29,10 +29,10 @@
 }
 
 .features-grid .feature-box {
-    background: #171133;
+    background: #0b0b33;
     padding: 1.5rem;
     border-radius: 1rem;
-    border: 1px solid #4c446e;
+    border: 1px solid #363c66;
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
