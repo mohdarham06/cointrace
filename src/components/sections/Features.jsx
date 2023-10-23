@@ -13,8 +13,9 @@ import MetaVerse from '../../assets/metaverse.png'
 
 const Features = () => {
     return (
-        <section id='features' className='features-section'>
+        <section id='features' className='features section'>
             <div className="features-container">
+            
                 <h2 className="section-heading">
                     WHY
                     <span>WE ARE THE BEST</span>

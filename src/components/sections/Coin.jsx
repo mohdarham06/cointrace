@@ -7,7 +7,7 @@ const Coin = () => {
 
 
     return (
-        <section id='coin' className="coin-section">
+        <section id='coin' className="coin section">
 
             <CoinDataFetcher />
 

@@ -5,22 +5,24 @@ import React from 'react'
 const Join = () => {
 
     return (
-        <section id='join' className='join-section'>
-        
-            <div className="join-content">
-                <h2 className="section-heading">
-                    JOIN US VIA
-                    <br />
-                    <span>DISCORD</span>
-                </h2>
+        <section id='join' className='join section'>
+            <div className="join-container">
 
-                <p className="join-p">
-                    Take control of your crypto investments, all in one place.
-                </p>
+                <div className="join-content">
+                    <h2 className="section-heading">
+                        JOIN US VIA
+                        <br />
+                        <span>DISCORD</span>
+                    </h2>
 
-                <div className="join-button">Join via Discord</div>
+                    <p className="join-p">
+                        Take control of your crypto investments, all in one place.
+                    </p>
+
+                    <div className="join-button">Join via Discord</div>
+                </div>
+
             </div>
-
         </section>
     )
 }

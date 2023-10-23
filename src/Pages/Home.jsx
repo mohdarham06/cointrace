@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Hero from '../components/sections/Hero';
+import Hero from '../components/sections/Home';
 import Market from '../components/sections/Market';
 import Features from '../components/sections/Features';
 import Join from '../components/sections/Join';
