@@ -4,6 +4,8 @@ import Loader from '../components/Loader'
 import CryptoList from '../components/CryptoList';
 
 import { useState, useEffect } from 'react';
+
+import { marketDataUrl } from './Api';
 import axios from 'axios';
 
 // props from Market Section
@@ -13,23 +15,9 @@ const MarketDataFetcher = ({ currentPage }) => {
 
 
     useEffect(() => {
-        const options = {
-            method: 'GET',
-            url: 'https://coingecko.p.rapidapi.com/coins/markets',
-            params: {
-                vs_currency: 'usd',
-                page: currentPage,
-                per_page: '10'
-            },
-            headers: {
-                'X-RapidAPI-Key': 'd9b652efb4msh6e4040368154c25p1c68bejsn16303a787b72',
-                'X-RapidAPI-Host': 'coingecko.p.rapidapi.com'
-            }
-        }
-
         async function getMarketData() {
             try {
-                const response = await axios.request(options);
+                const response = await axios.request(marketDataUrl(currentPage));
                 console.log(response.data);
                 setCryptoData(response.data);
                 setCryptoLoading(false);
