@@ -4,6 +4,8 @@ import Loader from '../Loader';
 
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
+import { trendingDataUrl } from '../../services/Api';
 import axios from 'axios';
 
 
@@ -13,24 +15,11 @@ const Hero = () => {
     const [cryptoLoading, setCryptoLoading] = useState(true);
 
 
-    useEffect(() => {
-        const options = {
-            method: 'GET',
-            url: 'https://coingecko.p.rapidapi.com/coins/markets',
-            params: {
-                vs_currency: 'usd',
-                page: '1',
-                per_page: '4'
-            },
-            headers: {
-                'X-RapidAPI-Key': 'd9b652efb4msh6e4040368154c25p1c68bejsn16303a787b72',
-                'X-RapidAPI-Host': 'coingecko.p.rapidapi.com'
-            }
-        }
 
+    useEffect(() => {
         async function getMarketData() {
             try {
-                const response = await axios.request(options);
+                const response = await axios.request(trendingDataUrl());
                 console.log(response.data);
                 setCryptoUpdates(response.data);
                 setCryptoLoading(false);
