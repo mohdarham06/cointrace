@@ -44,7 +44,7 @@ const CryptoList = ({ cryptoData }) => {
                         </p>
 
                         <p className={'price-change ' + (coin.price_change_percentage_24h ?
-                            (coin.price_change_percentage_24h >= 0 ? 'green' : 'red') : '')}
+                            (coin.price_change_percentage_24h >= 0 ? 'green-change' : 'red-change') : '')}
                         >
                             {coin.price_change_percentage_24h ?
                                 (coin.price_change_percentage_24h >= 0

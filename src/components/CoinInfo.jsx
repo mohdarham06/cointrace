@@ -1,9 +1,14 @@
 import React from 'react'
 
 import MissingImage from '../assets/missingimage.png';
+import { BsChevronDown } from "react-icons/bs";
+
+import { useState } from 'react';
+
 
 // coin from CoinDataFetcher
 const CoinInfo = ({ coin }) => {
+    const [isCollapsed, setCollapsed] = useState(true);
 
     const formatNumberScale = (number) => {
         if (number >= 1e12) {
@@ -21,6 +26,20 @@ const CoinInfo = ({ coin }) => {
 
     function numberWithCommas(x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    const renderPriceChange = (priceChange) => {
+        if (priceChange !== undefined) {
+            const className = 'coin-price-change ' + (priceChange >= 0 ? 'green-change' : 'red-change');
+            const formattedPercentage = priceChange.toFixed(2) + " %"
+            return (
+                <td className={className}>
+                    {priceChange >= 0 ? ("+" + formattedPercentage) : formattedPercentage}
+                </td>
+            )
+        } else {
+            return <td className='coin-price-change'>--</td>
+        }
     }
 
 
@@ -66,65 +85,12 @@ const CoinInfo = ({ coin }) => {
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td className={"coin-price-change " + (coin.market_data.price_change_percentage_1h ?
-                                        (coin.market_data.price_change_percentage_1h >= 0 ? "green" : "red") : "")}
-                                    >
-                                        {coin.market_data.price_change_percentage_1h ?
-                                            (coin.market_data.price_change_percentage_1h >= 0
-                                                ? ("+" + coin.market_data.price_change_percentage_1h.toFixed(2) + " %")
-                                                : (coin.market_data.price_change_percentage_1h.toFixed(2) + " %")
-                                            ) : "--"}
-                                    </td>
-
-                                    <td className={"coin-price-change " + (coin.market_data.price_change_percentage_24h ?
-                                        (coin.market_data.price_change_percentage_24h >= 0 ? "green" : "red") : "")}
-                                    >
-                                        {coin.market_data.price_change_percentage_24h ?
-                                            (coin.market_data.price_change_percentage_24h >= 0
-                                                ? ("+" + coin.market_data.price_change_percentage_24h.toFixed(2) + " %")
-                                                : (coin.market_data.price_change_percentage_24h.toFixed(2) + " %")
-                                            ) : "--"}
-                                    </td>
-
-                                    <td className={"coin-price-change " + (coin.market_data.price_change_percentage_7d ?
-                                        (coin.market_data.price_change_percentage_7d >= 0 ? "green" : "red") : "")}
-                                    >
-                                        {coin.market_data.price_change_percentage_7d ?
-                                            (coin.market_data.price_change_percentage_7d >= 0
-                                                ? ("+" + coin.market_data.price_change_percentage_7d.toFixed(2) + " %")
-                                                : (coin.market_data.price_change_percentage_7d.toFixed(2) + " %")
-                                            ) : "--"}
-                                    </td>
-
-                                    <td className={"coin-price-change " + (coin.market_data.price_change_percentage_14d ?
-                                        (coin.market_data.price_change_percentage_14d >= 0 ? "green" : "red") : "")}
-                                    >
-                                        {coin.market_data.price_change_percentage_14d ?
-                                            (coin.market_data.price_change_percentage_14d >= 0
-                                                ? ("+" + coin.market_data.price_change_percentage_14d.toFixed(2) + " %")
-                                                : (coin.market_data.price_change_percentage_14d.toFixed(2) + " %")
-                                            ) : "--"}
-                                    </td>
-
-                                    <td className={"coin-price-change " + (coin.market_data.price_change_percentage_30d ?
-                                        (coin.market_data.price_change_percentage_30d >= 0 ? "green" : "red") : "")}
-                                    >
-                                        {coin.market_data.price_change_percentage_30d ?
-                                            (coin.market_data.price_change_percentage_30d >= 0
-                                                ? ("+" + coin.market_data.price_change_percentage_30d.toFixed(2) + " %")
-                                                : (coin.market_data.price_change_percentage_30d.toFixed(2) + " %")
-                                            ) : "--"}
-                                    </td>
-
-                                    <td className={"coin-price-change " + (coin.market_data.price_change_percentage_1y ?
-                                        (coin.market_data.price_change_percentage_1y >= 0 ? "green" : "red") : "")}
-                                    >
-                                        {coin.market_data.price_change_percentage_1y ?
-                                            (coin.market_data.price_change_percentage_1y >= 0
-                                                ? ("+" + coin.market_data.price_change_percentage_1y.toFixed(2) + " %")
-                                                : (coin.market_data.price_change_percentage_1y.toFixed(2) + " %")
-                                            ) : "--"}
-                                    </td>
+                                    {renderPriceChange(coin.market_data.price_change_percentage_1h_in_currency.usd)}
+                                    {renderPriceChange(coin.market_data.price_change_percentage_24h_in_currency.usd)}
+                                    {renderPriceChange(coin.market_data.price_change_percentage_7d_in_currency.usd)}
+                                    {renderPriceChange(coin.market_data.price_change_percentage_14d_in_currency.usd)}
+                                    {renderPriceChange(coin.market_data.price_change_percentage_30d_in_currency.usd)}
+                                    {renderPriceChange(coin.market_data.price_change_percentage_1y_in_currency.usd)}
                                 </tr>
                             </tbody>
                         </table>
@@ -136,14 +102,14 @@ const CoinInfo = ({ coin }) => {
                         <div className="grid-cell">
                             <div className='stat-box'>
                                 <div className="stat-label">24 Hour High</div>
-                                <div className="">
+                                <div>
                                     {coin.market_data.high_24h.usd ? ("$ " + coin.market_data.high_24h.usd.toFixed(2)) : "--"}
                                 </div>
                             </div>
 
                             <div className='stat-box'>
                                 <div className="stat-label">24 Hour Low</div>
-                                <div className="">
+                                <div>
                                     {coin.market_data.low_24h.usd ? ("$ " + coin.market_data.low_24h.usd.toFixed(2)) : "--"}
                                 </div>
                             </div>
@@ -152,14 +118,14 @@ const CoinInfo = ({ coin }) => {
                         <div className="grid-cell">
                             <div className='stat-box'>
                                 <div className="stat-label">Market cap</div>
-                                <div className="">
+                                <div>
                                     {coin.market_data.market_cap.usd ? ("$ " + formatNumberScale(coin.market_data.market_cap.usd.toFixed(2))) : "--"}
                                 </div>
                             </div>
 
                             <div className='stat-box'>
                                 <div className="stat-label">Circulating Supply</div>
-                                <div className="">
+                                <div>
                                     {coin.market_data.circulating_supply ? ("$ " + formatNumberScale(coin.market_data.circulating_supply.toFixed(2))) : "--"}
                                 </div>
                             </div>
@@ -167,15 +133,23 @@ const CoinInfo = ({ coin }) => {
                     </div>
                 </div>
 
-                <div className="coin-info-item">
-                    <h3>About</h3>
-                    <p className="coin-discription">
-                        {coin.description.en}
-                    </p>
+                <div className="coin-info-item" onClick={()=> setCollapsed(!isCollapsed)}>
+                    <div className={'accordion-item ' + (isCollapsed ? 'collapsed' : 'expanded')}>
+                        <div className="accordion-label">
+                            <h3>About</h3>
+                            <div className="accordion-icon">
+                                <BsChevronDown />
+                            </div>
+                        </div>
+
+                        <p className="coin-discription"
+                            dangerouslySetInnerHTML={{ __html: coin.description.en ? coin.description.en : "--" }}
+                        ></p>
+                    </div>
                 </div>
             </div>
 
-         
+
 
 
         </div>

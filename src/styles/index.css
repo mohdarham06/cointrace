@@ -58,6 +58,7 @@ html {
     --scrollbar: #47beb1;
     --scrollbar-hover: #52d1c2;
     --scrollbar-active: #62e2d3;
+    --inline-link: #42eba4;
     --blue: #4625ff;
     --gradient: linear-gradient(90deg, #4625ff 0%, #48dfbe 100%);
     --home-background: linear-gradient(rgb(25, 24, 92), rgb(5, 8, 36));
@@ -134,7 +135,13 @@ a {
 }
 
 
+.green-change {
+    color: var(--positive-price-change);
+}
 
+.red-change {
+    color: var(--negative-price-change);
+}
 
 
 
@@ -257,13 +264,6 @@ section.home {
     margin-top: 5px;
 }
 
-.feed-coin .price-change.green {
-    color: var(--positive-price-change);
-}
-
-.feed-coin .price-change.red {
-    color: var(--negative-price-change);
-}
 
 
 
@@ -284,6 +284,7 @@ section.market {
 
 .market-container {
     max-width: var(--section-width);
+    width: 100%;
 }
 
 .market-container .market-section-heading {
@@ -291,7 +292,7 @@ section.market {
     margin: 15px 0 30px;
 }
 
-.coin-list-info {
+.coin-list-label {
     background: var(--blue);
     background: var(--gradient);
     display: grid;
@@ -354,13 +355,6 @@ section.market {
     font-weight: 400;
 }
 
-.coin .price-change.green {
-    color: var(--positive-price-change);
-}
-
-.coin .price-change.red {
-    color: var(--negative-price-change)
-}
 
 
 
@@ -553,7 +547,7 @@ section.join {
     font-weight: 600;
     cursor: pointer;
     border: 2px solid var(--blue);
-    border-radius: 30px;
+    border-radius: 10rem;
     overflow: hidden;
     transition: all 400ms ease-in-out;
 }
@@ -564,7 +558,7 @@ section.join {
     left: 0;
     top: 0;
     background: var(--gradient);
-    border-radius: 30px;
+    border-radius: 10rem;
     height: 10px;
     width: 10px;
     z-index: -1;
@@ -578,7 +572,7 @@ section.join {
     border: 2px solid var(--transparent);
 }
 
-.join-button:hover::before, 
+.join-button:hover::before,
 .join-button:active::before {
     visibility: visible;
     transform: scale(32) translateX(2px);
@@ -667,7 +661,12 @@ section.coin .coin-container {
 
 .coin-content .coin-info-item {
     background: #121744;
-    padding: 0.7rem;
+    padding: 1rem 1rem;
+}
+
+.coin-content .coin-info-item h3 {
+    font-size: 1.4rem;
+    padding-bottom: 5px;
 }
 
 /* coin heading */
@@ -693,6 +692,7 @@ section.coin .coin-container {
     justify-content: space-between;
     padding-top: 0.8rem;
 }
+
 .coin-content .coin-name-price span {
     display: flex;
     flex-direction: row;
@@ -705,6 +705,7 @@ section.coin .coin-container {
     width: 2.8rem;
     height: 2.8rem;
 }
+
 .coin-content .coin-name {
     font-size: 1.2rem;
 }
@@ -733,7 +734,7 @@ section.coin .coin-container {
 }
 
 .price-change-content table thead tr,
-.price-change-content table tbody tr{
+.price-change-content table tbody tr {
     display: grid;
     gap: 0.5rem;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -768,19 +769,37 @@ section.coin .coin-container {
 
 
 /* coin about */
+.coin-content .accordion-item .accordion-label {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.accordion-item.collapsed {
+    max-height: 2rem;
+    overflow: hidden;
+}
+
+.accordion-item.expanded {
+    max-height: none;
+}
+
+.accordion-item .accordion-icon {
+    font-size: 1.2rem;
+}
+
 .coin-content .coin-discription {
     white-space: initial;
+    padding: 0.8rem 0rem;
+    font-size: 1.1rem;
     font-weight: 400;
-    padding: 1rem 0;
+    line-height: 1.5rem;
+    word-spacing: 2px;
+    overflow: auto;
+    max-height: none;
 }
 
-.coin-content .price-change-content .coin-price-change.green {
-    color: var(--positive-price-change);
+.coin-content .coin-discription a {
+    color: var(--inline-link);
 }
-
-.coin-content .price-change-content .coin-price-change.red {
-    color: var(--negative-price-change);
-}
-
-
 
