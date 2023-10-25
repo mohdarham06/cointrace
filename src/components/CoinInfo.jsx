@@ -1,14 +1,11 @@
 import React from 'react'
 
 import MissingImage from '../assets/missingimage.png';
-import { BsChevronDown } from "react-icons/bs";
 
-import { useState } from 'react';
 
 
 // coin from CoinDataFetcher
 const CoinInfo = ({ coin }) => {
-    const [isCollapsed, setCollapsed] = useState(true);
 
     const formatNumberScale = (number) => {
         if (number >= 1e12) {
@@ -50,8 +47,11 @@ const CoinInfo = ({ coin }) => {
                 <h2 className="coin-info-item coin-name">{coin.name ? coin.name : "--"}</h2>
 
                 <div className='coin-info-item'>
-                    <div className="coin-rank">
-                        {coin.market_cap_rank ? ("Popularity: #" + coin.market_cap_rank) : "Popularity: --"}
+                    <div className="coin-label-content">
+                        <div className="coin-rank">
+                            {coin.market_cap_rank ? ("Popularity: #" + coin.market_cap_rank) : "Popularity: --"}
+                        </div>
+                        <div className="price-label">Current Price</div>
                     </div>
 
                     <div className='coin-name-price'>
@@ -133,19 +133,12 @@ const CoinInfo = ({ coin }) => {
                     </div>
                 </div>
 
-                <div className="coin-info-item" onClick={()=> setCollapsed(!isCollapsed)}>
-                    <div className={'accordion-item ' + (isCollapsed ? 'collapsed' : 'expanded')}>
-                        <div className="accordion-label">
-                            <h3>About</h3>
-                            <div className="accordion-icon">
-                                <BsChevronDown />
-                            </div>
-                        </div>
+                <div className="coin-info-item">
+                    <h3 className='discription-label'>About</h3>
 
-                        <p className="coin-discription"
-                            dangerouslySetInnerHTML={{ __html: coin.description.en ? coin.description.en : "--" }}
-                        ></p>
-                    </div>
+                    <p className="coin-discription"
+                        dangerouslySetInnerHTML={{ __html: coin.description.en ? coin.description.en : "--" }}
+                    ></p>
                 </div>
             </div>
 

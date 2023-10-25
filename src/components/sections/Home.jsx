@@ -5,7 +5,7 @@ import Loader from '../Loader';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import { trendingDataUrl } from '../../services/Api';
+import { feedDataUrl } from '../../services/Api';
 import axios from 'axios';
 
 
@@ -19,7 +19,7 @@ const Hero = () => {
     useEffect(() => {
         async function getMarketData() {
             try {
-                const response = await axios.request(trendingDataUrl());
+                const response = await axios.request(feedDataUrl());
                 console.log(response.data);
                 setCryptoUpdates(response.data);
                 setCryptoLoading(false);
@@ -51,10 +51,10 @@ const Hero = () => {
 
 
                 <div className="crypto-feed-container">
-                    {cryptoLoading && <Loader />}
 
 
                     <div className="feed-content">
+                        {cryptoLoading && <Loader />}
                         {
                             cryptoUpdates.map((coin) => (
                                 <Link
