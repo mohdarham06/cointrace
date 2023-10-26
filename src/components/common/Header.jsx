@@ -44,22 +44,22 @@ const Header = () => {
     };
 
     return (
-        <header className={isSticky ? 'sticky-header' : ''}>
+        <header className={'header ' + (isSticky ? 'header--sticky' : '')}>
 
-            <div onClick={scrollToTop} className="brand">
+            <div onClick={scrollToTop} className="header__brand">
                 <Link to='/'>COINTRACE</Link>
             </div>
 
             <nav>
-                <ul className='nav-ul'>
-                    <li onClick={() => scrollToSection('home')}>Home</li>
-                    <li onClick={() => scrollToSection('market')}>Market</li>
-                    <li onClick={() => scrollToSection('features')}>Choose Us</li>
-                    <li onClick={() => scrollToSection('join')}>Join</li>
+                <ul className='header__nav-list'>
+                    <li className='header__nav-item' onClick={() => scrollToSection('home')}>Home</li>
+                    <li className='header__nav-item' onClick={() => scrollToSection('market')}>Market</li>
+                    <li className='header__nav-item' onClick={() => scrollToSection('features')}>Choose Us</li>
+                    <li className='header__nav-item' onClick={() => scrollToSection('join')}>Join</li>
                 </ul>
             </nav>
 
-            <div className='social-icons'>
+            <div className='header__social-icons'>
                 <RiTwitterLine />
                 <RiDiscordLine />
             </div>

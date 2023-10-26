@@ -39,10 +39,10 @@ const Hero = () => {
 
     return (
         // remove main
-        <section id='home' className='home section'>
+        <section id='home' className='section section--home'>
             <div className="home-container">
 
-                <h1 className='section-heading'>
+                <h1 className='section__heading'>
                     TRACK AND TRADE
                     <br />
                     <span>CRYPTO CURRENCIES</span>
@@ -51,9 +51,6 @@ const Hero = () => {
 
 
                 <div className="crypto-feed-container">
-
-
-                    <div className="feed-content">
                         {cryptoLoading && <Loader />}
                         {
                             cryptoUpdates.map((coin) => (
@@ -86,10 +83,8 @@ const Hero = () => {
                                 </Link>
                             ))
                         }
-                    </div>
-
-
                 </div>
+
             </div>
         </section>
 

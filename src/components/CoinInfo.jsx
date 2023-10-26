@@ -26,7 +26,7 @@ const CoinInfo = ({ coin }) => {
     }
 
     const renderPriceChange = (priceChange) => {
-        if (priceChange !== undefined) {
+        if (priceChange) {
             const className = 'coin-price-change ' + (priceChange >= 0 ? 'green-change' : 'red-change');
             const formattedPercentage = priceChange.toFixed(2) + " %"
             return (

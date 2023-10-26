@@ -5,11 +5,11 @@ import React from 'react'
 const Join = () => {
 
     return (
-        <section id='join' className='join section'>
+        <section id='join' className='section section--join'>
             <div className="join-container">
 
                 <div className="join-content">
-                    <h2 className="section-heading">
+                    <h2 className="section__heading">
                         JOIN US VIA
                         <br />
                         <span>DISCORD</span>

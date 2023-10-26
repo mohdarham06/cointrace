@@ -63,10 +63,10 @@ const Market = () => {
 
 
     return (
-        <section id='market' className='market section'>
+        <section id='market' className='section section--market'>
             <div className="market-container">
 
-                <h2 className='market-section-heading'>Market Update</h2>
+                <h2 className='market__section-heading'>Market Update</h2>
                 <div className="coin-list-label">
                     <div>Coin</div>
                     <div>Price</div>

@@ -13,16 +13,16 @@ import MetaVerse from '../../assets/metaverse.png'
 
 const Features = () => {
     return (
-        <section id='features' className='features section'>
+        <section id='features' className='section section--features'>
             <div className="features-container">
             
-                <h2 className="section-heading">
+                <h2 className="section__heading">
                     WHY
                     <span>WE ARE THE BEST</span>
                 </h2>
 
 
-                <div className="features-grid">
+                <div className="features__grid">
                     <div className="grid-cell">
                         <FeatureBox
                             icon={<BsWallet2 />}
@@ -37,13 +37,15 @@ const Features = () => {
                         <FeatureBox
                             icon={<BsShieldCheck />}
                             title="Confirm Transaction"
-                            info="Earn by selling your crypto on our marketplace."
+                            info="Earn by trading crypto currency on our marketplace."
                         />
                     </div>
+
 
                     <div className="grid-cell">
                         <img className="feature-image" src={MetaVerse} alt="" />
                     </div>
+
 
                     <div className="grid-cell">
                         <FeatureBox

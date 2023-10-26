@@ -15,6 +15,7 @@ import './styles/coin.css';
 import './styles/notfound.css';
 import './styles/backbutton.css';
 import './styles/loader.css';
+import './styles/mediaqueries.css'
 
 
 import { Routes, Route } from 'react-router-dom';

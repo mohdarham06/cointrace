@@ -1,0 +1,146 @@
+/* --  >1200 px  */
+@media only screen and (min-width: 1200px) {}
+
+/* --  >992 px  */
+@media only screen and (min-width: 992px) {}
+
+
+/* --  >768 px  */
+@media only screen and (max-width: 768px) {
+
+    /* --REUSABLE */
+    .section {
+        padding: 6rem 1.5rem 3rem;
+    }
+
+
+    /* --HOME */
+    .home-container {
+        padding-top: 5rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* coin-feed */
+    .crypto-feed-container {
+        max-width: 900px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 2.5rem;
+        padding: 0 1rem;
+        gap: 2rem 0.8rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        white-space: nowrap;
+        /* overflow: hidden; */
+    }
+
+    .feed-coin {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        user-select: none;
+    }
+
+    .feed-coin .coin-icon {
+        margin-bottom: 8px;
+    }
+
+    .feed-coin .current-price {
+        margin-top: 4px;
+    }
+
+
+
+
+
+
+
+
+    /* --FEATUREs */
+    .section--features {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .features-container {
+        max-width: 1000px;
+    }
+
+    .features-container .section__heading {
+        margin-bottom: 4rem;
+    }
+
+    .features__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .features__grid .grid-cell {
+        max-width: 480px;
+        width: 100%;
+        padding: 0 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .features__grid .feature-box {
+        width: 100%;
+        background: #0b0b33;
+        padding: 1.5rem;
+        border-radius: 1rem;
+        border: 1px solid #363c66;
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .feature-box .feature-icon {
+        font-size: 1.5rem;
+    }
+
+    .feature-box .feature-title {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+    }
+
+    .feature-box .feature-info {
+        color: #d6d5db;
+        font-size: 0.9rem;
+    }
+
+    .features-container .feature-image {
+        width: 75%;
+    }
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* --  >576 px  */
+@media only screen and (max-width: 576px) {}
+
+/* --  >420 px  */
+@media only screen and (max-width: 420px) {}
