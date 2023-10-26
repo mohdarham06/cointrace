@@ -50,39 +50,39 @@ const Hero = () => {
 
 
 
+                {cryptoLoading && <Loader />}
                 <div className="crypto-feed-container">
-                        {cryptoLoading && <Loader />}
-                        {
-                            cryptoUpdates.map((coin) => (
-                                <Link
-                                    to={`/coin/${coin.id}`}
-                                    className='feed-coin'
-                                    key={coin.id} >
+                    {
+                        cryptoUpdates.map((coin) => (
+                            <Link
+                                to={`/coin/${coin.id}`}
+                                className='feed-coin'
+                                key={coin.id} >
 
-                                    <div>
-                                        {coin.image ? <img className='coin-icon' src={coin.image} alt={coin.id} /> : null}
-                                    </div>
+                                <div>
+                                    {coin.image ? <img className='coin-icon' src={coin.image} alt={coin.id} /> : null}
+                                </div>
 
-                                    <div>
-                                        <span className='coin-name'>{coin.name ? coin.name : null}</span>
-                                        {" "}
-                                        <span className={'price-change ' + (coin.price_change_percentage_24h ?
-                                            (coin.price_change_percentage_24h >= 0 ? 'green-change' : 'red-change') : '')}
-                                        >
-                                            {coin.price_change_percentage_24h ?
-                                                (coin.price_change_percentage_24h >= 0
-                                                    ? ("+" + coin.price_change_percentage_24h.toFixed(2) + "%")
-                                                    : (coin.price_change_percentage_24h.toFixed(2) + "%")
-                                                ) : "--"}
-                                        </span>
-                                    </div>
+                                <div>
+                                    <span className='coin-name'>{coin.name ? coin.name : null}</span>
+                                    {" "}
+                                    <span className={'price-change ' + (coin.price_change_percentage_24h ?
+                                        (coin.price_change_percentage_24h >= 0 ? 'green-change' : 'red-change') : '')}
+                                    >
+                                        {coin.price_change_percentage_24h ?
+                                            (coin.price_change_percentage_24h >= 0
+                                                ? ("+" + coin.price_change_percentage_24h.toFixed(2) + "%")
+                                                : (coin.price_change_percentage_24h.toFixed(2) + "%")
+                                            ) : "--"}
+                                    </span>
+                                </div>
 
-                                    <p className='current-price'>
-                                        {coin.current_price ? ("$ " + numberWithCommas(coin.current_price.toFixed(2))) : "--"}
-                                    </p>
-                                </Link>
-                            ))
-                        }
+                                <p className='current-price'>
+                                    {coin.current_price ? ("$ " + numberWithCommas(coin.current_price.toFixed(2))) : "--"}
+                                </p>
+                            </Link>
+                        ))
+                    }
                 </div>
 
             </div>

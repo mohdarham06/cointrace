@@ -46,22 +46,37 @@ const Header = () => {
     return (
         <header className={'header ' + (isSticky ? 'header--sticky' : '')}>
 
-            <div onClick={scrollToTop} className="header__brand">
-                <Link to='/'>COINTRACE</Link>
+            <div className="header__desktop">
+                <div onClick={scrollToTop} className="header__brand">
+                    <Link to='/'>COINTRACE</Link>
+                </div>
+
+                <nav className='header__desktop__nav'>
+                    <ul className='desktop__nav__list'>
+                        <li className='desktop__nav__item' onClick={() => scrollToSection('home')}>Home</li>
+                        <li className='desktop__nav__item' onClick={() => scrollToSection('market')}>Market</li>
+                        <li className='desktop__nav__item' onClick={() => scrollToSection('features')}>Choose Us</li>
+                        <li className='desktop__nav__item' onClick={() => scrollToSection('join')}>Join</li>
+                    </ul>
+                </nav>
+
+                <div className='header__social-icons'>
+                    <RiTwitterLine />
+                    <RiDiscordLine />
+                </div>
             </div>
 
-            <nav>
-                <ul className='header__nav-list'>
-                    <li className='header__nav-item' onClick={() => scrollToSection('home')}>Home</li>
-                    <li className='header__nav-item' onClick={() => scrollToSection('market')}>Market</li>
-                    <li className='header__nav-item' onClick={() => scrollToSection('features')}>Choose Us</li>
-                    <li className='header__nav-item' onClick={() => scrollToSection('join')}>Join</li>
-                </ul>
-            </nav>
 
-            <div className='header__social-icons'>
-                <RiTwitterLine />
-                <RiDiscordLine />
+
+            <div className="header__mobile">
+                <div onClick={scrollToTop} className="header__brand">
+                    <Link to='/'>COINTRACE</Link>
+                </div>
+                <nav className="header__mobile__nav">
+                    <ul className="mobile__nav__list">
+                        <li className="mobile__nav__item">mobile</li>
+                    </ul>
+                </nav>
             </div>
 
         </header>

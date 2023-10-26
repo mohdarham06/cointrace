@@ -1,6 +1,5 @@
 
 
-import Header from './components/common/Header';
 import Home from './pages/Home';
 import CoinPage from './pages/CoinPage';
 import NotFound from './pages/NotFound';
@@ -26,8 +25,6 @@ function App() {
 
     return (
         <>
-            <Header />
-
             <Routes>
                 <Route path='/' element={<Home />} />
 

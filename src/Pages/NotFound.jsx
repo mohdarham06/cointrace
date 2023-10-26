@@ -1,24 +1,27 @@
 import React from 'react'
 
-
+import Header from '../components/common/Header';
 import BackButton from '../components/BackButton'
 
 
 const NotFound = () => {
     return (
-        <main>
-            <BackButton />
-            
-            <section className='notfound-section'>
+        <>
+            <Header />
+            <main>
+                <BackButton />
 
-                <h1 className='section-heading'>
-                    Sorry,
-                    <br />
-                    <span>Page not found!</span>
-                </h1>
+                <section className='notfound-section'>
 
-            </section>
-        </main>
+                    <h1 className='section-heading'>
+                        Sorry,
+                        <br />
+                        <span>Page not found!</span>
+                    </h1>
+
+                </section>
+            </main>
+        </>
     )
 }
 
