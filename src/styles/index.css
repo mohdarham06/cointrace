@@ -155,7 +155,7 @@ a {
     position: absolute;
     max-width: 1200px;
     width: 100%;
-    padding: 1.6rem 1.2rem !important;
+    padding: 1.5rem 1.2rem !important;
     /* padding: 0 1.2rem !important;
     height: 82px;
     display: flex; */
@@ -178,7 +178,7 @@ a {
 }
 
 .header__brand {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 600;
 }
 
@@ -296,17 +296,17 @@ a {
     justify-content: center;
 }
 
-.market-container {
+.market__container {
     max-width: var(--section-width);
     width: 100%;
 }
 
-.market-container .market__section-heading {
+.market__section-heading {
     font-size: 2rem;
     margin: 15px 0 30px;
 }
 
-.coin-list-label {
+.market__list_label {
     background: var(--blue);
     background: var(--gradient);
     display: grid;
@@ -360,7 +360,6 @@ a {
 
 .coin-list .coin .coin-name {
     font-weight: 500;
-    white-space: nowrap;
 }
 
 .coin-list .coin .coin-symbol {
@@ -377,14 +376,14 @@ a {
 
 
 /* --PAGINATION */
-.market-container .pagination-container {
+.market__pagination {
     display: flex;
     flex-direction: row;
     justify-content: center;
     padding: 1.4rem 0;
 }
 
-.pagination-box {
+.pagination__container {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -394,19 +393,19 @@ a {
     box-shadow: 0 0 10px 0 rgba(150, 148, 168, 0.4);
 }
 
-.pagination-box button {
+.pagination__container button {
     border: none;
     cursor: pointer;
     font: inherit;
     transition: all 150ms ease-in-out;
 }
 
-.pagination-box button:hover,
-.pagination-box button:active {
+.pagination__container button:hover,
+.pagination__container button:active {
     background: rgba(82, 107, 247, 0.6);
 }
 
-.pagination-container .number-pagination {
+.market__pagination .number-pagination {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -430,7 +429,7 @@ a {
 
 
 /* Previous/Next pagination */
-.pagination-container .arrow-pagination {
+.market__pagination .arrow-pagination {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -441,11 +440,11 @@ a {
     color: var(--font);
 }
 
-.pagination-container .previous-pagination {
+.market__pagination .previous-pagination {
     border-radius: 50% 5px 5px 50%;
 }
 
-.pagination-container .next-pagination {
+.market__pagination .next-pagination {
     border-radius: 5px 50% 50% 5px;
 }
 

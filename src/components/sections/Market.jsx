@@ -64,25 +64,28 @@ const Market = () => {
 
     return (
         <section id='market' className='section section--market'>
-            <div className="market-container">
+            <div className="market__container">
 
                 <h2 className='market__section-heading'>Market Update</h2>
-                <div className="coin-list-label">
-                    <div>Coin</div>
-                    <div>Price</div>
-                    <div>24h Change</div>
-                    <div>Market Cap</div>
+
+                <div className="market__content">
+
+                    <div className="market__list_label">
+                        <div>Coin</div>
+                        <div>Price</div>
+                        <div>24h Change</div>
+                        <div>Market Cap</div>
+                    </div>
+
+
+                    {cryptoLoading && <Loader />}
+                    <CryptoList cryptoData={cryptoData} />
                 </div>
 
 
 
-                {cryptoLoading && <Loader />}
-                <CryptoList cryptoData={cryptoData} />
-
-
-
-                <div className="pagination-container">
-                    <div className="pagination-box">
+                <div className="market__pagination">
+                    <div className="pagination__container">
 
                         <button className='arrow-pagination previous-pagination'
                             onClick={() => {
