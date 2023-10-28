@@ -72,9 +72,15 @@ const Header = () => {
                 <div onClick={scrollToTop} className="header__brand">
                     <Link to='/'>COINTRACE</Link>
                 </div>
-                <nav className="header__mobile__nav">
+
+                <div className="">Mobile</div>
+
+                <nav className="header__mobile__nav active">
                     <ul className="mobile__nav__list">
-                        <li className="mobile__nav__item">mobile</li>
+                        <li className="mobile__nav__item">Home</li>
+                        <li className="mobile__nav__item">Market</li>
+                        <li className="mobile__nav__item">Choose Us</li>
+                        <li className="mobile__nav__item">Join</li>
                     </ul>
                 </nav>
             </div>

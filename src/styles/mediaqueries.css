@@ -1,11 +1,12 @@
-/* --  >1200 px  */
+/* --  <1200 px  */
 @media only screen and (min-width: 1200px) {}
 
-/* --  >992 px  */
+/* --  <992 px  */
 @media only screen and (min-width: 992px) {}
 
-
 /* --  >768 px  */
+
+/* --  >720 px  */
 @media only screen and (max-width: 720px) {
 
     /* --REUSABLE */
@@ -21,6 +22,19 @@
 
     .header__mobile {
         display: flex;
+    }
+    
+    .header__mobile__nav {}
+    
+    .header__mobile__nav.inactive {
+        display: none;
+    }
+    .header__mobile__nav.active {
+        right: 0;
+        top: 80px;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
     }
 
 
@@ -57,16 +71,10 @@
 
 
     /* --MARKET */
-    .section--market {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-
     .market__container {
         max-width: var(--section-width);
         width: 100%;
-        overflow: hidden;
+        overflow-x: scroll;
     }
 
     .market__section-heading {
@@ -75,8 +83,7 @@
     }
 
     .market__content {
-        width: 800px;
-        
+        width: 780px;
     }
 
     .market__list_label {
@@ -144,74 +151,81 @@
 
 
 
-    /* --PAGINATION */
-    .market__pagination {
-        padding: 1.8rem 0;
-    }
 
-    .pagination__container {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 0.8rem;
-        padding: 0.6rem 0.7rem;
-        border-radius: 12px;
-    }
+/* --PAGINATION */
+.market__pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1.4rem 0;
+}
 
-    .pagination__container button {
-        border: none;
-        cursor: pointer;
-        font: inherit;
-        transition: all 150ms ease-in-out;
-    }
+.pagination__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+    border-radius: 14px;
+    box-shadow: 0 0 10px 0 rgba(150, 148, 168, 0.4);
+}
 
-    .pagination__container button:hover,
-    .pagination__container button:active {
-        background: rgba(82, 107, 247, 0.6);
-    }
+.pagination__container button {
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    transition: all 150ms ease-in-out;
+}
 
-    .market__pagination .number-pagination {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 2.2rem;
-        height: 2.2rem;
-        border-radius: 10px;
-        font-size: 0.9rem;
-        background: var(--number-pagi-btn);
-        color: var(--font);
-    }
+.pagination__container button:hover,
+.pagination__container button:active {
+    background: rgba(82, 107, 247, 0.6);
+}
 
-    .number-pagination.activePagi {
-        color: var(--font);
-        background: var(--blue);
-    }
+.market__pagination .number-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    background: var(--number-pagi-btn);
+    color: var(--font);
+}
 
-    .number-pagination.activePagi:hover,
-    .number-pagination.activePagi:active {
-        background: var(--blue);
-    }
+.number-pagination.activePagi {
+    color: var(--font);
+    background: var(--blue);
+}
+
+.number-pagination.activePagi:hover,
+.number-pagination.activePagi:active {
+    background: var(--blue);
+}
 
 
-    /* Previous/Next pagination */
-    .market__pagination .arrow-pagination {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 2.2rem;
-        height: 2.2rem;
-        font-size: 1.2rem;
-        background: #1d1f77;
-        color: var(--font);
-    }
+/* Previous/Next pagination */
+.market__pagination .arrow-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.6rem;
+    height: 2.6rem;
+    font-size: 1.5rem;
+    background: #1d1f77;
+    color: var(--font);
+}
 
-    .market__pagination .previous-pagination {
-        border-radius: 50% 4px 4px 50%;
-    }
+.market__pagination .previous-pagination {
+    border-radius: 50% 5px 5px 50%;
+}
 
-    .market__pagination .next-pagination {
-        border-radius: 4px 50% 50% 4px;
-    }
+.market__pagination .next-pagination {
+    border-radius: 5px 50% 50% 5px;
+}
+
+
 
 
 

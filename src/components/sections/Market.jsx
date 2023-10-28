@@ -81,35 +81,32 @@ const Market = () => {
                     {cryptoLoading && <Loader />}
                     <CryptoList cryptoData={cryptoData} />
                 </div>
+            </div>
+
+            
+            <div className="market__pagination">
+                <div className="pagination__container">
+
+                    <button className='arrow-pagination previous-pagination'
+                        onClick={() => {
+                            if (currentPage <= 1) return;
+                            setMarketPageParams({ marketpage: currentPage - 1 })
+                        }}>
+                        <MdOutlineArrowBackIos />
+                    </button>
 
 
-
-                <div className="market__pagination">
-                    <div className="pagination__container">
-
-                        <button className='arrow-pagination previous-pagination'
-                            onClick={() => {
-                                if (currentPage <= 1) return;
-                                setMarketPageParams({ marketpage: currentPage - 1 })
-                            }}>
-                            <MdOutlineArrowBackIos />
-                        </button>
+                    {paginationButtons}
 
 
-                        {paginationButtons}
+                    <button className='arrow-pagination next-pagination'
+                        onClick={() => {
+                            setMarketPageParams({ marketpage: currentPage + 1 })
+                        }}>
+                        <MdOutlineArrowForwardIos />
+                    </button>
 
-
-                        <button className='arrow-pagination next-pagination'
-                            onClick={() => {
-                                setMarketPageParams({ marketpage: currentPage + 1 })
-                            }}>
-                            <MdOutlineArrowForwardIos />
-                        </button>
-
-                    </div>
                 </div>
-
-
             </div>
         </section>
     )
