@@ -100,7 +100,7 @@ const Header = () => {
                         <span class="bot"></span>
                 </label>
 
-                <nav className="header__mobile__nav active">
+                <nav className="header__mobile__nav inactive">
                     <ul className="mobile__nav__list">
                         <li className="mobile__nav__item">Home</li>
                         <li className="mobile__nav__item">Market</li>

@@ -21,7 +21,7 @@
 
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
-    width: 14px;
+    width: 13px;
 }
 
 *::-webkit-scrollbar-track {
@@ -51,8 +51,9 @@ html {
 
 /* || ROOT || */
 :root {
-    /* COLORS */
-    --background: rgb(5, 8, 36);
+    --hue-color: 234;
+    /* --COLORS */
+    --background: hsl(var(--hue-color), 76%, 8%);
     --font: #ffffff;
     --transparent: transparent;
     --section-width: 1120px;
@@ -63,7 +64,7 @@ html {
     --blue: #4625ff;
     --gradient: linear-gradient(90deg, #4625ff 0%, #48dfbe 100%);
     --home-background: linear-gradient(rgb(25, 24, 92), rgb(5, 8, 36));
-    --header-background: rgb(5, 5, 36);
+    --header-background: hsl(var(--hue-color), 76%, 11%);
     --footer: #08060f;
     --links: #8696b6;
     --item-backround: #121744;
@@ -71,6 +72,26 @@ html {
     --positive-price-change: rgb(95, 243, 127);
     --negative-price-change: rgb(255, 58, 58);
     --number-pagi-btn: rgba(91, 107, 255, 0.3);
+
+
+    /* --TYPOGRAPHY */
+    --heading-font-size: 3rem;
+    --h1-font-size: 3rem;
+    --h2-font-size: 2rem;
+    --h3-font-size: 1.5rem; 
+    --normal-font-size: 0.938rem; /* 15px */
+    
+    /* not used */
+    ---font-22px: 1.375rem; /* 22px */
+    --font-20px: 1.25rem; /* 20px */
+    ---font-17px: 1.065rem; /* 17px */
+    --small-font-size: 0.813rem; /* 13px */
+    --smaller-font-size: 0.75rem; /* 12px */
+
+    /* Font Weight*/
+    --font-normal: 400;
+    --font-semi-bold: 500;
+    --font-bold: 600;
 }
 
 
@@ -80,6 +101,7 @@ body {
     justify-content: center;
     align-items: center;
     color: var(--font);
+    font-size: var(--normal-font-size);
     background: var(--background);
 }
 
@@ -99,8 +121,6 @@ body {
 main {
     position: relative;
     width: 100%;
-    /* flex-grow: 1; */
-    /* overflow-y: auto; */
 }
 
 
@@ -119,7 +139,7 @@ a {
 }
 
 .section__heading {
-    font-size: 3rem;
+    font-size: var(--heading-font-size);
     font-weight: 600;
     display: flex;
     flex-direction: column;
@@ -180,7 +200,7 @@ a {
 
 .header__brand {
     font-size: 1.4rem;
-    font-weight: 600;
+    font-weight: var(--font-bold);
 }
 
 .desktop__nav__list {
@@ -207,15 +227,14 @@ a {
     color: #4f78ff;
 }
 
-
-
-
 .header__social-icons {
     display: flex;
     flex-direction: row;
     font-size: 1.4rem;
     gap: 0.8rem;
 }
+
+
 
 /* Mobile */
 .header__mobile {
@@ -226,11 +245,30 @@ a {
     justify-content: space-between;
 }
 
+.header__mobile__nav.inactive {
+    display: none;
+}
+
+.header__mobile__nav.active {
+    position: absolute;
+}
+
+.header__mobile__nav {
+    left: 0;
+    top: 0;
+    background: var(--background);
+}
+
 .mobile__nav__list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-size: 1.4rem;
+    font-weight: 500;
     list-style: none;
 }
 
-
+/* Hamburger Menu */
 .menuButton {
     display: flex;
     flex-direction: column;
@@ -351,7 +389,7 @@ input[type]:checked~span.mid {
 }
 
 .market__section-heading {
-    font-size: 2rem;
+    font-size: var(--h2-font-size);
     margin: 15px 0 30px;
 }
 
@@ -414,7 +452,6 @@ input[type]:checked~span.mid {
 .coin-list .coin .coin-symbol {
     font-size: 0.8rem;
     color: #dbd8df;
-    font-weight: 400;
 }
 
 
@@ -703,11 +740,10 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
 .section--coin .coin-container {
-    padding: 3rem 0;
+    padding: 0 0 3rem 0;
     position: relative;
     border-radius: 34px;
     width: 100%;
@@ -731,7 +767,7 @@ footer {
 }
 
 .coin-content .coin-info-item h3 {
-    font-size: 1.4rem;
+    font-size: var(--h3-font-size);
     padding-bottom: 5px;
 }
 
@@ -794,7 +830,7 @@ footer {
 .coin-content .coin-symbol {
     font-size: 0.8rem;
     color: #dbd8df;
-    font-weight: 400;
+    font-weight: var(--font-normal);
 }
 
 /* price change */
@@ -846,18 +882,20 @@ footer {
 
 
 /* coin about */
-.coin-content .coin-discription {
-    white-space: initial;
-    padding: 0.8rem 0rem;
-    font-size: 1.1rem;
-    font-weight: 400;
-    line-height: 1.5rem;
+.coin-content .discription-container {
+    max-height: 240px;
     overflow: auto;
-    max-height: none;
 }
 
 .coin-content .discription-label {
     border-bottom: 2px solid #46477e;
+}
+.coin-content .coin-discription {
+    white-space: initial;
+    padding: 0.8rem 0.6rem 0 0;
+    line-height: 1.5rem;
+    overflow: auto;
+    max-height: none;
 }
 
 .coin-content .coin-discription a {

@@ -24,24 +24,7 @@
         display: flex;
     }
 
-    .header__mobile__nav {}
 
-    .header__mobile__nav.inactive {
-        display: none;
-    }
-
-    .header__mobile__nav.active {
-        position: absolute;
-        top: 80px;
-    }
-
-    .mobile__nav__list {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-        font-size: 1.4rem;
-        font-weight: 500;
-    }
 
 
 
@@ -79,7 +62,7 @@
     .market__container {
         max-width: var(--section-width);
         width: 100%;
-        overflow-x: scroll;
+        overflow: auto;
     }
 
     .market__section-heading {
