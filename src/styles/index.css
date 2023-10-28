@@ -160,6 +160,7 @@ a {
     height: 82px;
     display: flex; */
     z-index: 100;
+    user-select: none;
 }
 
 .header--sticky {
@@ -202,6 +203,13 @@ a {
     color: #4f78ff;
 }
 
+.desktop__nav__item.active {
+    color: #4f78ff;
+}
+
+
+
+
 .header__social-icons {
     display: flex;
     flex-direction: row;
@@ -221,6 +229,46 @@ a {
 .mobile__nav__list {
     list-style: none;
 }
+
+
+.menuButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    width: 30px;
+    height: 30px;
+}
+
+input[type="checkbox"] {
+    display: none;
+    visibility: hidden;
+}
+
+.menuButton span {
+    width: 25px;
+    height: 2px;
+    background: #ffffff;
+    transition: 0.3s ease;
+}
+
+input[type]:checked~span.top {
+    transform: translate(0px, 8px)rotate(45deg);
+    width: 30px;
+}
+
+input[type]:checked~span.bot {
+    transform: translate(-0px, -8px) rotate(-45deg);
+    width: 30px;
+}
+
+input[type]:checked~span.mid {
+    transform: translateX(-25px);
+    opacity: 0;
+}
+
+
 
 
 
@@ -563,6 +611,7 @@ a {
     border: 2px solid var(--blue);
     border-radius: 10rem;
     overflow: hidden;
+    user-select: none;
     transition: all 350ms ease-in-out;
 }
 
@@ -648,7 +697,7 @@ footer {
 
 
 /* --COIN */
-.section--coin{
+.section--coin {
     min-height: 100vh;
     position: relative;
     display: flex;
@@ -803,7 +852,6 @@ footer {
     font-size: 1.1rem;
     font-weight: 400;
     line-height: 1.5rem;
-    word-spacing: 2px;
     overflow: auto;
     max-height: none;
 }
@@ -815,7 +863,3 @@ footer {
 .coin-content .coin-discription a {
     color: var(--inline-link);
 }
-
-
-
-

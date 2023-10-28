@@ -43,6 +43,26 @@ const Header = () => {
         });
     };
 
+    // // current page
+    // const navItems = document.querySelectorAll('.desktop__nav__item');
+    // const sections = document.querySelectorAll('section[id]');
+
+    // function currentPageUpdate() {
+    //     const scrollY = window.scrollY || window.pageYOffset;
+
+    //     sections.forEach((current, index) => {
+    //         const sectionTop = current.offsetTop - 80;
+    //         const sectionHeight = current.offsetHeight;
+
+    //         if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+    //             navItems.forEach((item) => item.classList.remove('active'));
+    //             navItems[index].classList.add('active');
+    //         }
+    //     });
+    // }
+    // window.addEventListener('scroll', currentPageUpdate);
+
+
     return (
         <header className={'header ' + (isSticky ? 'header--sticky' : '')}>
 
@@ -73,7 +93,12 @@ const Header = () => {
                     <Link to='/'>COINTRACE</Link>
                 </div>
 
-                <div className="">Mobile</div>
+                <label for="check" class="menuButton">
+                    <input id="check" type="checkbox"></input>
+                        <span class="top"></span>
+                        <span class="mid"></span>
+                        <span class="bot"></span>
+                </label>
 
                 <nav className="header__mobile__nav active">
                     <ul className="mobile__nav__list">
