@@ -9,9 +9,15 @@ const CoinPage = () => {
 
     return (
         <>
-            <div className="header header--sticky" >
+            <header
+                className="header header--sticky"
+                style={{
+                    zIndex: '50',
+                    padding: '1.5rem 1.2rem'
+                }}
+            >
                 <BackButton />
-            </div>
+            </header>
 
             <main>
 
