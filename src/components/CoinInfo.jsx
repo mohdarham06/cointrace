@@ -134,9 +134,9 @@ const CoinInfo = ({ coin }) => {
                 </div>
 
                 <div className="coin-info-item">
-                    <div className="discription-container">
-                        <h3 className='discription-label'>About</h3>
+                    <h3 className='discription-label'>About</h3>
 
+                    <div className="discription-container">
                         <p className="coin-discription"
                             dangerouslySetInnerHTML={{ __html: coin.description.en ? coin.description.en : "--" }}
                         ></p>

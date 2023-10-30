@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Loader from '../Loader';
-import CryptoList from '../CryptoList';
+import CoinList from '../CoinList';
 
 import { useState, useEffect } from 'react';
 
@@ -79,7 +79,7 @@ const Market = () => {
 
 
                     {cryptoLoading && <Loader />}
-                    <CryptoList cryptoData={cryptoData} />
+                    <CoinList cryptoData={cryptoData} />
                 </div>
             </div>
 

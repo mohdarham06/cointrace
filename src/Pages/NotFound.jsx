@@ -1,19 +1,25 @@
 import React from 'react'
 
-import Header from '../components/common/Header';
 import BackButton from '../components/BackButton'
 
 
 const NotFound = () => {
     return (
         <>
-            <Header />
-            <main>
+            <header
+                className="header header--sticky"
+                style={{
+                    zIndex: '50',
+                    padding: '1.5rem 1.2rem'
+                }}
+            >
                 <BackButton />
+            </header>
 
+            <main>
                 <section className='notfound-section'>
 
-                    <h1 className='section-heading'>
+                    <h1 className='section__heading'>
                         Sorry,
                         <br />
                         <span>Page not found!</span>

@@ -5,7 +5,7 @@ import MissingImage from '../assets/missingimage.png';
 import { Link } from 'react-router-dom';
 
 // cryptoData from MarketDataFetcher
-const CryptoList = ({ cryptoData }) => {
+const CoinList = ({ cryptoData }) => {
 
     const formatNumberScale = (number) => {
         if (number >= 1e12) {
@@ -62,5 +62,5 @@ const CryptoList = ({ cryptoData }) => {
     )
 }
 
-export default CryptoList
+export default CoinList
 

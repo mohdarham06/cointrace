@@ -51,8 +51,8 @@ html {
 
 /* || ROOT || */
 :root {
-    --hue-color: 234;
     /* --COLORS */
+    --hue-color: 234;
     --background: hsl(var(--hue-color), 76%, 8%);
     --font: #ffffff;
     --transparent: transparent;
@@ -63,13 +63,11 @@ html {
     --inline-link: #42eba4;
     --blue: #4625ff;
     --gradient: linear-gradient(90deg, #4625ff 0%, #48dfbe 100%);
-    --home-background: linear-gradient(rgb(25, 24, 92), rgb(5, 8, 36));
     --header-background: hsl(var(--hue-color), 76%, 11%);
     --nav-item-active: #4f78ff;
-    --footer: #08060f;
-    --links: #8696b6;
-    --item-backround: #121744;
-    --item-backround-hover: #212264;
+    --home-background: linear-gradient(rgb(25, 24, 92), rgb(5, 8, 36));
+    --item-backround: hsl(234, 58%, 17%);
+    --item-backround-hover: hsl(234, 50%, 26%);
     --positive-price-change: rgb(95, 243, 127);
     --negative-price-change: rgb(255, 58, 58);
     --number-pagi-btn: rgba(91, 107, 255, 0.3);
@@ -97,7 +95,6 @@ html {
     /* Z-INDEX */
     --z-header: 100;
     --z-navbar: 50;
-    --z-menu: 200;
 
     /* Transitions */
     --transition-navigation-toggle: all 250ms ease-in-out;
@@ -210,7 +207,7 @@ a {
     list-style: none;
     gap: 2.5rem;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: var(--font-bold);
     white-space: nowrap;
 }
 
@@ -241,10 +238,10 @@ a {
 /* Mobile */
 .header__mobile {
     z-index: var(--z-header);
+    display: none;
     position: absolute;
     padding: 1.5rem 1.2rem;
     width: 100%;
-    display: none;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -252,6 +249,7 @@ a {
 
 .mobile__nav {
     z-index: var(--z-navbar);
+    display: none;
     position: fixed;
     padding-top: 6rem;
     left: 0;
@@ -276,6 +274,43 @@ a {
     transition: var(--transition-navigation-toggle);
 }
 
+.mobile__nav.hidden .mobile__nav__item {
+    transform-origin: left center;
+    transform: rotateY(90deg);
+}
+
+.mobile__nav.visible .mobile__nav__item {
+    transform-origin: left center;
+    transform: rotateY(0deg);
+}
+
+.mobile__nav.hidden .mobile__nav__item:nth-child(1) {
+    transition: transform 700ms ease-in-out;
+}
+.mobile__nav.hidden .mobile__nav__item:nth-child(2) {
+    transition: transform 550ms ease-in-out;
+}
+.mobile__nav.hidden .mobile__nav__item:nth-child(3) {
+    transition: transform 400ms ease-in-out;
+}
+.mobile__nav.hidden .mobile__nav__item:nth-child(4) {
+    transition: transform 250ms ease-in-out;
+}
+
+.mobile__nav.visible .mobile__nav__item:nth-child(1) {
+    transition: transform 250ms ease-in-out, color 150ms ease-in-out, border 150ms ease-in-out;
+}
+.mobile__nav.visible .mobile__nav__item:nth-child(2) {
+    transition: transform 400ms ease-in-out, color 150ms ease-in-out, border 150ms ease-in-out;
+}
+.mobile__nav.visible .mobile__nav__item:nth-child(3) {
+    transition: transform 550ms ease-in-out, color 150ms ease-in-out, border 150ms ease-in-out;
+}
+.mobile__nav.visible .mobile__nav__item:nth-child(4) {
+    transition: transform 700ms ease-in-out, color 150ms ease-in-out, border 150ms ease-in-out;
+}
+
+
 .mobile__nav__list {
     display: flex;
     flex-direction: column;
@@ -290,7 +325,6 @@ a {
     padding: 0 0 0 1rem;
     cursor: pointer;
     border-left: 4px solid var(--transparent);
-    transition: all 150ms ease-in-out;
 }
 
 .mobile__nav__item:hover,
@@ -302,7 +336,6 @@ a {
 .mobile__nav__item.active {
     border-left: 2px solid white;
     color: var(--nav-item-active);
-    transition: all 150ms ease-in-out;
 }
 
 .header--sticky {
@@ -444,18 +477,18 @@ input[type]:checked~span.mid {
 
 .market__section-heading {
     font-size: var(--h2-font-size);
-    margin: 15px 0 30px;
+    margin: 0 0 1.8rem;
 }
 
 .market__list_label {
     background: var(--blue);
     background: var(--gradient);
     display: grid;
-    grid-template-columns: 5fr 4fr 4fr 1fr;
-    gap: 1.2rem;
+    grid-template-columns: 7fr 5fr 6fr 1fr;
+    gap: 1rem;
     font-size: var(--font-size-large);
     font-weight: var(--font-semi-bold);
-    padding: 0.9rem;
+    padding: 0.8rem 1rem;
     border-radius: 12px 12px 0 0;
     white-space: nowrap;
 }
@@ -463,16 +496,15 @@ input[type]:checked~span.mid {
 .section--market .coin-list {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.8rem;
     font-size: var(--font-size-medium);
 }
 
 .coin-list .coin {
     background: var(--item-backround);
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 6fr 5fr 5fr 1fr;
     align-items: center;
-    justify-content: space-between;
     gap: 1rem;
     border-radius: 10px;
     padding: 0.8rem 1rem;
@@ -490,7 +522,7 @@ input[type]:checked~span.mid {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 1.2rem;
+    gap: 1rem;
 }
 
 .coin-list .coin .coin-icon {
@@ -519,15 +551,15 @@ input[type]:checked~span.mid {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 1.4rem 0;
+    padding: 1.2rem 0;
 }
 
 .pagination__container {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 1rem;
-    padding: 0.8rem 1rem;
+    gap: 0.8rem;
+    padding: 0.6rem 1rem;
     border-radius: 14px;
     box-shadow: 0 0 10px 0 rgba(150, 148, 168, 0.4);
 }
@@ -548,8 +580,8 @@ input[type]:checked~span.mid {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2.6rem;
-    height: 2.6rem;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 12px;
     font-size: var(--font-size-medium);
     background: var(--number-pagi-btn);
@@ -572,8 +604,8 @@ input[type]:checked~span.mid {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2.6rem;
-    height: 2.6rem;
+    width: 2.5rem;
+    height: 2.5rem;
     font-size: var(--font-size-extra-large);
     background: #1d1f77;
     color: var(--font);
@@ -597,7 +629,7 @@ input[type]:checked~span.mid {
 
 
 
-/* --FEATUREs */
+/* --FEATURES */
 .section--features {
     width: 100%;
     display: flex;
@@ -616,6 +648,7 @@ input[type]:checked~span.mid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1.2rem;
+    user-select: none;
 }
 
 .features__grid .grid-cell {
@@ -762,7 +795,7 @@ footer {
     display: flex;
     flex-direction: row;
     gap: 2.2rem;
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 .footer-text {
@@ -810,7 +843,7 @@ footer {
     flex-direction: column;
     gap: 1.2rem;
     white-space: nowrap;
-    font-weight: 500;
+    font-weight: var(--font-semi-bold);
 }
 
 .coin-content .coin-info-item {
@@ -936,7 +969,7 @@ footer {
 
 /* coin about */
 .coin-content .discription-container {
-    max-height: 220px;
+    max-height: 180px;
     overflow: auto;
 }
 
@@ -947,9 +980,9 @@ footer {
 .coin-content .coin-discription {
     white-space: initial;
     padding: 0.8rem 0.6rem 0 0;
+    font-weight: var(--font-medium);
+    font-size: var(--font-size-regular);
     line-height: 1.5rem;
-    overflow: auto;
-    max-height: none;
 }
 
 .coin-content .coin-discription a {
