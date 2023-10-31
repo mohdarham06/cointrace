@@ -101,6 +101,7 @@ html {
     --z-navbar: 50;
 
     /* Transitions */
+    --transition-hover: 150ms ease-in-out;
     --transition-navigation-toggle: all 250ms ease-in-out;
 }
 
@@ -209,7 +210,7 @@ a {
     display: flex;
     flex-direction: row;
     list-style: none;
-    gap: 2.5rem;
+    gap: 2.6rem;
     font-size: 1rem;
     font-weight: var(--font-bold);
     white-space: nowrap;
@@ -217,7 +218,7 @@ a {
 
 .desktop__nav__item {
     cursor: pointer;
-    transition: all 150ms ease-in-out;
+    transition: all var(--transition-hover);
 }
 
 .desktop__nav__item:hover,
@@ -227,7 +228,7 @@ a {
 
 .desktop__nav__item.active {
     color: var(--nav-item-active);
-    transition: all 150ms ease-in-out;
+    transition: all var(--transition-hover);
 }
 
 .header__social-icons {
@@ -289,29 +290,29 @@ a {
 }
 
 .mobile__nav.hidden .mobile__nav__item:nth-child(1) {
-    transition: transform 700ms ease-in-out;
+    transition: transform 750ms ease-in-out;
 }
 .mobile__nav.hidden .mobile__nav__item:nth-child(2) {
-    transition: transform 550ms ease-in-out;
+    transition: transform 600ms ease-in-out;
 }
 .mobile__nav.hidden .mobile__nav__item:nth-child(3) {
-    transition: transform 400ms ease-in-out;
+    transition: transform 450ms ease-in-out;
 }
 .mobile__nav.hidden .mobile__nav__item:nth-child(4) {
-    transition: transform 250ms ease-in-out;
+    transition: transform 300ms ease-in-out;
 }
 
 .mobile__nav.visible .mobile__nav__item:nth-child(1) {
-    transition: transform 250ms ease-in-out, color 150ms ease-in-out, border 150ms ease-in-out;
+    transition: transform 300ms ease-in-out, color var(--transition-hover), border var(--transition-hover);
 }
 .mobile__nav.visible .mobile__nav__item:nth-child(2) {
-    transition: transform 400ms ease-in-out, color 150ms ease-in-out, border 150ms ease-in-out;
+    transition: transform 450ms ease-in-out, color var(--transition-hover), border var(--transition-hover);
 }
 .mobile__nav.visible .mobile__nav__item:nth-child(3) {
-    transition: transform 550ms ease-in-out, color 150ms ease-in-out, border 150ms ease-in-out;
+    transition: transform 600ms ease-in-out, color var(--transition-hover), border var(--transition-hover);
 }
 .mobile__nav.visible .mobile__nav__item:nth-child(4) {
-    transition: transform 700ms ease-in-out, color 150ms ease-in-out, border 150ms ease-in-out;
+    transition: transform 750ms ease-in-out, color var(--transition-hover), border var(--transition-hover);
 }
 
 
@@ -514,7 +515,7 @@ input[type]:checked~span.mid {
     padding: 0.8rem 1rem;
     cursor: pointer;
     white-space: nowrap;
-    transition: all 150ms ease-in-out;
+    transition: all var(--transition-hover);
 }
 
 .coin-list .coin:hover,
@@ -572,7 +573,7 @@ input[type]:checked~span.mid {
     border: none;
     cursor: pointer;
     font: inherit;
-    transition: all 150ms ease-in-out;
+    transition: all var(--transition-hover);
 }
 
 .pagination__container button:hover,
@@ -918,7 +919,7 @@ footer {
 }
 
 .coin-content .coin-symbol {
-    font-size: 0.8rem;
+    font-size: var(--font-size-small);
     color: #dbd8df;
     font-weight: var(--font-medium);
 }
