@@ -109,7 +109,21 @@
         width: 60%;
     }
 
+
+
+
+
+    /* --COIN */
+    /* price change */
+    .price__change__content .price__change__list {
+        gap: 0.7rem 0.5rem;
+        grid-template-columns: repeat(3, 1fr);
+        text-align: center;
+    }
+
 }
+
+
 
 
 /* --  >612 px  */

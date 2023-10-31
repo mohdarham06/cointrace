@@ -22,6 +22,7 @@
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
     width: 13px;
+    height: 10px;
 }
 
 *::-webkit-scrollbar-track {
@@ -31,7 +32,10 @@
 *::-webkit-scrollbar-thumb {
     background-color: var(--scrollbar);
     border-radius: 20px;
-    border: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff; 
 }
 
 *::-webkit-scrollbar-thumb:hover {
@@ -881,8 +885,8 @@ footer {
 }
 
 .coin-content .price-label {
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: var(--font-size-extra-large);
+    font-weight: var(--font-bold);
 }
 
 .coin-content .coin-name-price {
@@ -906,11 +910,11 @@ footer {
 }
 
 .coin-content .coin-name {
-    font-size: 1.2rem;
+    font-size: var(--font-size-large);
 }
 
 .coin-content .coin-price {
-    font-size: 1.4rem;
+    font-size: var(--font-size-extra-large);
 }
 
 .coin-content .coin-symbol {
@@ -920,35 +924,34 @@ footer {
 }
 
 /* price change */
-.coin-content .price-change-content {
-    display: flex;
-    flex-direction: row;
-    gap: 2px;
-    justify-content: space-between;
-}
-
-.coin-content .price-change-content table {
+.coin-content .price__change__content {
     width: 100%;
-    margin: 0.5rem 0;
 }
 
-.price-change-content table thead tr,
-.price-change-content table tbody tr {
+.price__change__content .price__change__list {
+    width: 100%;
     display: grid;
     gap: 0.5rem;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    margin-top: 0.5rem;
+    grid-template-columns: repeat(6, 1fr);
     text-align: center;
 }
 
-.price-change-content table th,
-.price-change-content table td {
+.price__change__list .price__change__item {
+    display: flex;
+    flex-direction: column;
+}
+
+.price__change__item .change__label,
+.price__change__item .change__percentage {
     padding: 8px 0;
 }
 
-.price-change-content table th {
+.price__change__item .change__label {
     background: #2d2d63;
     border-radius: 5px;
 }
+
 
 
 /* coin stats */
@@ -962,7 +965,9 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0.5rem 0;
+    gap: 0.5rem;
+    padding: 0.3rem 0;
+    margin-bottom: 0.5rem;
     border-bottom: 2px solid #46477e;
 }
 

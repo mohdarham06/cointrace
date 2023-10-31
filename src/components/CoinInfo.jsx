@@ -27,15 +27,15 @@ const CoinInfo = ({ coin }) => {
 
     const renderPriceChange = (priceChange) => {
         if (priceChange) {
-            const className = 'coin-price-change ' + (priceChange >= 0 ? 'green-change' : 'red-change');
+            const className = 'change__percentage ' + (priceChange >= 0 ? 'green-change' : 'red-change');
             const formattedPercentage = priceChange.toFixed(2) + " %"
             return (
-                <td className={className}>
+                <div className={className}>
                     {priceChange >= 0 ? ("+" + formattedPercentage) : formattedPercentage}
-                </td>
+                </div>
             )
         } else {
-            return <td className='coin-price-change'>--</td>
+            return <div className='change__percentage'>--</div>
         }
     }
 
@@ -71,44 +71,56 @@ const CoinInfo = ({ coin }) => {
 
                 <div className='coin-info-item'>
                     <h3>Price Change</h3>
-                    <div className='price-change-content'>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>1h</th>
-                                    <th>24h</th>
-                                    <th>7d</th>
-                                    <th>14d</th>
-                                    <th>30d</th>
-                                    <th>1yr</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    {renderPriceChange(coin.market_data.price_change_percentage_1h_in_currency.usd)}
-                                    {renderPriceChange(coin.market_data.price_change_percentage_24h_in_currency.usd)}
-                                    {renderPriceChange(coin.market_data.price_change_percentage_7d_in_currency.usd)}
-                                    {renderPriceChange(coin.market_data.price_change_percentage_14d_in_currency.usd)}
-                                    {renderPriceChange(coin.market_data.price_change_percentage_30d_in_currency.usd)}
-                                    {renderPriceChange(coin.market_data.price_change_percentage_1y_in_currency.usd)}
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div className='price__change__content'>
+
+                        <div className='price__change__list'>
+                            <div className="price__change__item">
+                                <div className='change__label'>1h</div>
+                                {renderPriceChange(coin.market_data.price_change_percentage_1h_in_currency.usd)}
+                            </div>
+
+                            <div className="price__change__item">
+                                <div className='change__label'>24h</div>
+                                {renderPriceChange(coin.market_data.price_change_percentage_24h_in_currency.usd)}
+                            </div>
+
+                            <div className="price__change__item">
+                                <div className='change__label'>7d</div>
+                                {renderPriceChange(coin.market_data.price_change_percentage_7d_in_currency.usd)}
+                            </div>
+
+                            <div className="price__change__item">
+                                <div className='change__label'>14d</div>
+                                {renderPriceChange(coin.market_data.price_change_percentage_14d_in_currency.usd)}
+                            </div>
+
+                            <div className="price__change__item">
+                                <div className='change__label'>30d</div>
+                                {renderPriceChange(coin.market_data.price_change_percentage_30d_in_currency.usd)}
+                            </div>
+
+                            <div className="price__change__item">
+                                <div className='change__label'>1yr</div>
+                                {renderPriceChange(coin.market_data.price_change_percentage_1y_in_currency.usd)}
+                            </div>
+                        </div>
+
                     </div>
                 </div>
+
 
                 <div className="coin-info-item">
                     <div className="coin-stats-grid">
                         <div className="grid-cell">
                             <div className='stat-box'>
-                                <div className="stat-label">24 Hour High</div>
+                                <div className="stat-label">24H High</div>
                                 <div>
                                     {coin.market_data.high_24h.usd ? ("$ " + coin.market_data.high_24h.usd.toFixed(2)) : "--"}
                                 </div>
                             </div>
 
                             <div className='stat-box'>
-                                <div className="stat-label">24 Hour Low</div>
+                                <div className="stat-label">24H Low</div>
                                 <div>
                                     {coin.market_data.low_24h.usd ? ("$ " + coin.market_data.low_24h.usd.toFixed(2)) : "--"}
                                 </div>
