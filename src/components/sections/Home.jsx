@@ -5,6 +5,8 @@ import Loader from '../Loader';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+import { IoIosArrowDown } from 'react-icons/io';
+
 import { feedDataUrl } from '../../services/Api';
 import axios from 'axios';
 
@@ -32,9 +34,14 @@ const Hero = () => {
     }, [])
 
 
-
     function numberWithCommas(x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    
+    function scrollToMarket() {
+        const marketSection = document.getElementById('market');
+        marketSection.scrollIntoView({ behavior: 'smooth' });
     }
 
     return (
@@ -48,6 +55,13 @@ const Hero = () => {
                     <span>CRYPTO CURRENCIES</span>
                 </h1>
 
+                <div
+                    className="button button--market"
+                    onClick={scrollToMarket}
+                >
+                    Explore&nbsp;
+                    <IoIosArrowDown />
+                </div>
 
 
                 {cryptoLoading && <Loader />}

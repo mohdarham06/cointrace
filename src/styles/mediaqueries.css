@@ -77,7 +77,6 @@
 
 
 
-
     /* --FEATURES */
     .features__grid {
         display: grid;
@@ -98,7 +97,6 @@
     .features-container .feature-image {
         width: 60%;
     }
-
 
 
 
@@ -157,7 +155,6 @@
 
 
 
-
 /* --  >576 px  */
 @media only screen and (max-width: 576px) {
 
@@ -191,6 +188,9 @@
         padding: 5rem 1.5rem 3rem;
     }
 
+    .button {
+        padding: 1.1rem 2.2rem;
+    }
 
 
 
@@ -321,15 +321,12 @@
 
 
 
-
     /* --JOIN */
     .join__content .join__p {
         padding-bottom: 4.5rem;
     }
 
-    .join__content .join__button {
-        padding: 1.1rem 2.2rem;
-    }
+
 
 
 
@@ -338,15 +335,6 @@
     .social-icons {
         font-size: 1.6rem;
     }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -390,49 +378,47 @@
     /* coin stats */
     .coin-content .coin-stats-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
     .coin-stats-grid .grid-cell .stat-box {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 0.5rem;
-        padding: 0.3rem 0;
-        margin-bottom: 0.5rem;
-        border-bottom: 2px solid #46477e;
+        padding: 0.25rem 0;
     }
 
 
     /* coin about */
     .coin-content .discription-container {
-        max-height: 180px;
-        overflow: auto;
+        max-height: 160px;
     }
-
-    .coin-content .discription-label {
-        border-bottom: 2px solid #46477e;
-    }
-
-    .coin-content .coin-discription {
-        white-space: initial;
-        padding: 0.8rem 0.6rem 0 0;
-        font-weight: var(--font-medium);
-        font-size: var(--font-size-regular);
-        line-height: 1.5rem;
-    }
-
-    .coin-content .coin-discription a {
-        color: var(--inline-link);
-    }
-
-
-
 }
 
 
 
 
-/* --  >420 px  */
-@media only screen and (max-width: 420px) {}
+
+/* --  >440 px  */
+@media only screen and (max-width: 440px) {
+
+    /* --HOME */
+    .home-container {
+        padding-top: 3.5rem;
+    }
+
+    /* hide coin feed */
+    .crypto-feed-container {
+        display: none;
+    }
+
+    .home-container .loader {
+        display: none;
+    }
+
+    /* show button */
+    .button--market {
+        display: flex;
+    }
+
+
+
+}

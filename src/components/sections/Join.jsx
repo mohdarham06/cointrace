@@ -19,7 +19,7 @@ const Join = () => {
                         Take control of your crypto investments, all in one place.
                     </p>
 
-                    <div className="join__button">Join via Discord</div>
+                    <div className="button button--join">Join via Discord</div>
                 </div>
 
             </div>
