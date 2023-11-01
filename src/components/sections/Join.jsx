@@ -6,20 +6,20 @@ const Join = () => {
 
     return (
         <section id='join' className='section section--join'>
-            <div className="join-container">
+            <div className="join__container">
 
-                <div className="join-content">
+                <div className="join__content">
                     <h2 className="section__heading">
                         JOIN US VIA
                         <br />
                         <span>DISCORD</span>
                     </h2>
 
-                    <p className="join-p">
+                    <p className="join__p">
                         Take control of your crypto investments, all in one place.
                     </p>
 
-                    <div className="join-button">Join via Discord</div>
+                    <div className="join__button">Join via Discord</div>
                 </div>
 
             </div>

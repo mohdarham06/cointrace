@@ -9,12 +9,6 @@
 /* --  >720 px  */
 @media only screen and (max-width: 720px) {
 
-    /* --REUSABLE */
-    .section {
-        padding: 6rem 1.5rem 3rem;
-    }
-
-
     /* --HEADER */
     /* hide desktop */
     .header__desktop {
@@ -62,7 +56,6 @@
 
 
 
-
     /* --MARKET */
     .market__container {
         overflow: hidden;
@@ -79,7 +72,6 @@
     .section--market .coin-list {
         width: 775px;
     }
-
 
 
 
@@ -116,15 +108,13 @@
     .price__change__content .price__change__list {
         gap: 0.7rem 0.5rem;
         grid-template-columns: repeat(3, 1fr);
-        text-align: center;
     }
-
 }
 
 
 
 
-/* --  >612 px  */
+/* --  >606 px  */
 @media only screen and (max-width: 606px) {
 
     /* --MARKET */
@@ -147,11 +137,6 @@
         gap: 0.7rem;
         padding: 0.6rem 0.8rem;
         border-radius: 12px;
-    }
-
-    .pagination__container button:hover,
-    .pagination__container button:active {
-        background: rgba(82, 107, 247, 0.6);
     }
 
     .market__pagination .number-pagination {
@@ -179,26 +164,273 @@
     /* || ROOT || */
     :root {
         /* --TYPOGRAPHY */
-        --h1-font-size: 3rem;
-        --h2-font-size: 1.75rem;
-        --h3-font-size: 1.5rem;
-        /* 13px */
-        --font-size-small: 0.813rem;
-        /* 15px */
-        --font-size-regular: 0.938rem;
+        --h1-font-size: 2.5rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        /* 12px */
+        --font-size-small: 0.75rem;
+        /* 14px */
+        --font-size-regular: 0.875rem;
+        /* 16px */
+        --font-size-medium: 1rem;
         /* 18px */
-        --font-size-medium: 1.125rem;
+        --font-size-large: 1.125rem;
         /* 20px */
-        --font-size-large: 1.25rem;
-        /* 22px */
-        --font-size-extra-large: 1.375rem;
+        --font-size-extra-large: 1.25rem;
 
         /* Font Weight*/
         --font-medium: 400;
         --font-semi-bold: 500;
         --font-bold: 600;
     }
+
+
+
+    /* --REUSABLE */
+    .section {
+        padding: 5rem 1.5rem 3rem;
+    }
+
+
+
+
+    /* --HEADER */
+    .header--go-back {
+        z-index: var(--z-header);
+        padding: 1.25rem 1rem;
+    }
+
+    .back-button {
+        height: 26px;
+        font-size: 2.2rem;
+    }
+
+    /* Mobile */
+    .header__mobile {
+        padding: 1.25rem 1rem;
+    }
+
+    /* Hamburger Menu */
+    .menu-button {
+        width: 26px;
+        height: 26px;
+    }
+
+    .menu-button .top,
+    .menu-button .mid,
+    .menu-button .bot {
+        width: 24px;
+    }
+
+
+
+
+    /* --HOME */
+    .home-container {
+        padding-top: 3.8rem;
+    }
+
+    /* coin-feed */
+    .crypto-feed-container {
+        margin-top: 2rem;
+        gap: 1.5rem 0.8rem;
+    }
+
+    .feed-coin .coin-icon {
+        width: 4.5rem;
+        height: 4.5rem;
+        margin-bottom: 6px;
+    }
+
+    .feed-coin .current-price {
+        margin-top: 3px;
+    }
+
+
+
+
+    /* --MARKET */
+    .market__section-heading {
+        margin: 0 0 1.5rem;
+    }
+
+    .market__list_label {
+        width: 680px;
+        gap: 0.8rem;
+    }
+
+    .section--market .coin-list {
+        width: 680px;
+        gap: 0.7rem;
+    }
+
+    .coin-list .coin {
+        gap: 0.8rem;
+        padding: 0.7rem 0.8rem;
+    }
+
+    .coin-list .coin span {
+        gap: 0.8rem;
+    }
+
+    .coin-list .coin .coin-icon {
+        width: 2.6rem;
+        height: 2.6rem;
+    }
+
+
+    /* --PAGINATION */
+    .market__pagination {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 1rem 0;
+    }
+
+    .pagination__container {
+        gap: 0.6rem;
+        padding: 0.5rem 0.6rem;
+        border-radius: 10px;
+    }
+
+    .market__pagination .number-pagination {
+        width: 2.1rem;
+        height: 2.1rem;
+        border-radius: 10px;
+    }
+
+    /* Previous/Next pagination */
+    .market__pagination .arrow-pagination {
+        width: 2.1rem;
+        height: 2.1rem;
+    }
+
+
+
+
+    /* --FEATURES */
+    .features-container .section__heading {
+        margin-bottom: 3.4rem;
+    }
+
+    .features__grid .feature-box {
+        padding: 1.2rem;
+        gap: 0.7rem;
+    }
+
+
+
+
+
+    /* --JOIN */
+    .join__content .join__p {
+        padding-bottom: 4.5rem;
+    }
+
+    .join__content .join__button {
+        padding: 1.1rem 2.2rem;
+    }
+
+
+
+
+    /* FOOTER */
+    .social-icons {
+        font-size: 1.6rem;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* --COIN */
+    .coin-container .coin-content {
+        gap: 0.8rem;
+    }
+
+    .coin-content .coin-info-item {
+        padding: 0.8rem;
+    }
+
+    .coin-content .coin-info-item h3 {
+        padding-bottom: 4px;
+    }
+
+
+    .coin-content .coin-name-price {
+        padding-top: 0.7rem;
+    }
+
+    .coin-content .coin-name-price span {
+        gap: 0.8rem;
+
+    }
+
+    .coin-content .coin-icon {
+        width: 2.6rem;
+        height: 2.6rem;
+    }
+
+    /* price change */
+    .price__change__item .change__label,
+    .price__change__item .change__percentage {
+        padding: 7px 0;
+    }
+
+
+    /* coin stats */
+    .coin-content .coin-stats-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .coin-stats-grid .grid-cell .stat-box {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 0.5rem;
+        padding: 0.3rem 0;
+        margin-bottom: 0.5rem;
+        border-bottom: 2px solid #46477e;
+    }
+
+
+    /* coin about */
+    .coin-content .discription-container {
+        max-height: 180px;
+        overflow: auto;
+    }
+
+    .coin-content .discription-label {
+        border-bottom: 2px solid #46477e;
+    }
+
+    .coin-content .coin-discription {
+        white-space: initial;
+        padding: 0.8rem 0.6rem 0 0;
+        font-weight: var(--font-medium);
+        font-size: var(--font-size-regular);
+        line-height: 1.5rem;
+    }
+
+    .coin-content .coin-discription a {
+        color: var(--inline-link);
+    }
+
+
+
 }
+
 
 
 
