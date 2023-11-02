@@ -81,9 +81,9 @@ html {
     --h2-font-size: 1.75rem;
     --h3-font-size: 1.5rem;
     /* 13px */
-    --font-size-small: 0.813rem;
+    --font-size-small: 0.8125rem;
     /* 15px */
-    --font-size-regular: 0.938rem;
+    --font-size-regular: 0.9375rem;
     /* 18px */
     --font-size-medium: 1.125rem;
     /* 20px */
@@ -435,10 +435,17 @@ input[type]:checked~span.mid {
 .button--market {
     display: none;
     flex-direction: row;
-    align-items: center;
     margin-top: 4rem;
     background: var(--gradient);
 }
+
+.button--market__icon {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2px;
+    align-items: center;
+}
+
 
 /* coin-feed */
 .crypto-feed-container {
@@ -993,6 +1000,8 @@ footer {
     padding: 0.8rem 0.6rem 0 0;
     font-weight: var(--font-medium);
     font-size: var(--font-size-regular);
+    line-height: 1.25rem;
+    word-spacing: 1px;
 }
 
 .coin-content .coin-discription a {

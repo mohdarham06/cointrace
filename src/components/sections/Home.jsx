@@ -38,7 +38,7 @@ const Hero = () => {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 
-    
+
     function scrollToMarket() {
         const marketSection = document.getElementById('market');
         marketSection.scrollIntoView({ behavior: 'smooth' });
@@ -60,7 +60,9 @@ const Hero = () => {
                     onClick={scrollToMarket}
                 >
                     Explore&nbsp;
-                    <IoIosArrowDown />
+                    <div className="button--market__icon">
+                        <IoIosArrowDown />
+                    </div>
                 </div>
 
 
