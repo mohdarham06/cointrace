@@ -91,23 +91,27 @@ const Header = () => {
 
             {/* Desktop */}
             <div className={'header__desktop ' + (isSticky ? 'header--sticky' : '')}>
-                <div onClick={scrollToTop} className="header__brand">
-                    <Link to='/'>COINTRACE</Link>
+            
+                <div className="header__desktop__content">
+                    <div onClick={scrollToTop} className="header__brand">
+                        <Link to='/'>COINTRACE</Link>
+                    </div>
+
+                    <nav className='header__desktop__nav'>
+                        <ul className='desktop__nav__list'>
+                            <li className='desktop__nav__item active' onClick={() => desktopScrollToSection('home')}>Home</li>
+                            <li className='desktop__nav__item' onClick={() => desktopScrollToSection('market')}>Market</li>
+                            <li className='desktop__nav__item' onClick={() => desktopScrollToSection('features')}>Choose Us</li>
+                            <li className='desktop__nav__item' onClick={() => desktopScrollToSection('join')}>Join</li>
+                        </ul>
+                    </nav>
+
+                    <div className='header__social-icons'>
+                        <RiTwitterLine />
+                        <RiDiscordLine />
+                    </div>
                 </div>
 
-                <nav className='header__desktop__nav'>
-                    <ul className='desktop__nav__list'>
-                        <li className='desktop__nav__item active' onClick={() => desktopScrollToSection('home')}>Home</li>
-                        <li className='desktop__nav__item' onClick={() => desktopScrollToSection('market')}>Market</li>
-                        <li className='desktop__nav__item' onClick={() => desktopScrollToSection('features')}>Choose Us</li>
-                        <li className='desktop__nav__item' onClick={() => desktopScrollToSection('join')}>Join</li>
-                    </ul>
-                </nav>
-
-                <div className='header__social-icons'>
-                    <RiTwitterLine />
-                    <RiDiscordLine />
-                </div>
             </div>
 
 

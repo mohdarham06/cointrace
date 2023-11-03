@@ -119,10 +119,10 @@ body {
 #root {
     position: relative;
     width: 100%;
-    max-width: 1200px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    align-items: center;
     /* border: 1px solid red; */
 }
 
@@ -192,9 +192,11 @@ a {
 
 /* --HEADER */
 .header {
-    max-width: 1200px;
     width: 100%;
     user-select: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .header--go-back {
@@ -204,10 +206,18 @@ a {
 
 /* Desktop */
 .header__desktop {
+    width: 100%;
     z-index: var(--z-header);
     position: absolute;
-    padding: 1.5rem 1.2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.header__desktop__content {
+    max-width: 1200px;
     width: 100%;
+    padding: 1.5rem 1.2rem;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -422,11 +432,15 @@ input[type]:checked~span.mid {
 .section--home {
     height: 100vh;
     background: var(--home-background);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .home-container {
-    padding-top: 7rem;
+    max-width: var(--section-width);
     width: 100%;
+    padding-top: 7rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -442,14 +456,14 @@ input[type]:checked~span.mid {
 .button--market__icon {
     display: flex;
     flex-direction: row;
-    margin-top: 2px;
     align-items: center;
+    margin-top: 2px;
 }
 
 
 /* coin-feed */
 .crypto-feed-container {
-    max-width: 900px;
+    -wi-width: 900px;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -498,7 +512,7 @@ input[type]:checked~span.mid {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
 }
 
 .market__container {
@@ -663,6 +677,7 @@ input[type]:checked~span.mid {
 .section--features {
     width: 100%;
     display: flex;
+    flex-direction: row;
     justify-content: center;
 }
 
@@ -733,6 +748,7 @@ input[type]:checked~span.mid {
 }
 
 .join__container {
+    max-width: var(--section-width);
     padding: 5rem 0;
 }
 
@@ -797,10 +813,12 @@ footer {
     height: 22rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
 
 .footer-content {
+    max-width: var(--section-width);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -847,9 +865,10 @@ footer {
 }
 
 .section--coin .coin-container {
+    max-width: var(--section-width);
+    width: 100%;
     padding-bottom: 2rem;
     position: relative;
-    width: 100%;
     display: flex;
     flex-direction: column;
 }
