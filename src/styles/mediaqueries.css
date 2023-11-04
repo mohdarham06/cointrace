@@ -1,10 +1,10 @@
 /* --  <1200 px  */
-@media only screen and (min-width: 1200px) {}
+/* @media only screen and (min-width: 1200px) {} */
 
 /* --  <992 px  */
-@media only screen and (min-width: 992px) {}
-
+/* @media only screen and (min-width: 992px) {} */
 /* --  >768 px  */
+
 
 /* --  >720 px  */
 @media only screen and (max-width: 720px) {
@@ -101,7 +101,7 @@
 
 
 
-    /* --COIN */
+    /* --COIN PAGE */
     /* price change */
     .price__change__content .price__change__list {
         gap: 0.7rem 0.5rem;
@@ -332,7 +332,7 @@
 
 
 
-    /* --COIN */
+    /* --COIN PAGE */
     .coin-container .coin-content {
         gap: 0.8rem;
     }

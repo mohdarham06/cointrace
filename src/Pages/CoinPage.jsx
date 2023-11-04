@@ -10,7 +10,10 @@ const CoinPage = () => {
     return (
         <>
             <header
-                className="header header--sticky header--go-back"
+                style={{
+                    width: '100%'
+                }}
+                className="header--sticky header--go-back"
             >
                 <BackButton />
             </header>
