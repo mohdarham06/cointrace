@@ -4,7 +4,7 @@ import MissingImage from '../assets/missingimage.png';
 
 
 
-// coin from CoinDataFetcher
+// coin from coin section
 const CoinInfo = ({ coin }) => {
 
     const formatNumberScale = (number) => {
@@ -44,7 +44,6 @@ const CoinInfo = ({ coin }) => {
         <div className="coin-container">
 
             <div className="coin-content">
-                <h2 className="coin-info-item coin-name">{coin.name ? coin.name : "--"}</h2>
 
                 <div className='coin-info-item'>
                     <div className="coin-label-content">

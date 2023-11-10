@@ -8,8 +8,8 @@ import { useParams } from "react-router-dom";
 import { coinDataUrl } from '../../services/Api';
 import axios from 'axios';
 
-
-const Coin = () => {
+// onCoinDataLoaded from CoinPage
+const Coin = ({ onCoinDataLoaded }) => {
 
     const { coinId } = useParams();
     const [coin, setCoin] = useState([]);
@@ -22,6 +22,8 @@ const Coin = () => {
                 const response = await axios.request(coinDataUrl(coinId));
                 console.log(response.data);
                 setCoin(response.data);
+                // Callback to notify the parent component about the loaded coin data
+                onCoinDataLoaded(response.data);
                 setCoinLoading(false)
             } catch (error) {
                 console.error(error);

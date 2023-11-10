@@ -1,26 +1,31 @@
 import React from 'react'
 
+
 import Coin from '../components/sections/Coin';
 import BackButton from '../components/BackButton';
 
+import { useState } from 'react';
+
 
 const CoinPage = () => {
+    const [coinData, setCoinData] = useState([]);
+
+    const handleCoinDataLoaded = (data) => {
+        setCoinData(data);
+    };
+
 
 
     return (
         <>
-            <header
-                style={{
-                    width: '100%'
-                }}
-                className="header--sticky header--go-back"
-            >
+            <header className="header--sticky header--coin-page" >
                 <BackButton />
+                <h2 className="header__coin-name">{coinData.name ? coinData.name : "--"}</h2>
             </header>
 
             <main>
 
-                <Coin />
+                <Coin onCoinDataLoaded={handleCoinDataLoaded} />
 
             </main>
         </>

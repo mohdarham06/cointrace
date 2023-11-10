@@ -16,8 +16,7 @@ root.render(
 
         <Router>
 
-            {<App />}
-
+            <App />
 
         </Router>
 

@@ -199,11 +199,6 @@ a {
     justify-content: center;
 }
 
-.header--go-back {
-    z-index: var(--z-header);
-    padding: 1.5rem 1.2rem;
-}
-
 /* Desktop */
 .header__desktop {
     width: 100%;

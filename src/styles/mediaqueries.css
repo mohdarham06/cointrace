@@ -190,7 +190,7 @@
 
 
     /* --HEADER */
-    .header--go-back {
+    .header--coin-page {
         z-index: var(--z-header);
         padding: 1.25rem 1rem;
     }

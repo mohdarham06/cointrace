@@ -1,3 +1,21 @@
+/* --HEADER */
+.header--coin-page {
+    width: 100%;
+    z-index: var(--z-header);
+    padding: 1.5rem 1.2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header__coin-name {
+    width: 100%;
+    font-size: var(--h2-font-size);
+    font-weight: var(--font-bold);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 /* --COIN */
 .section--coin {
@@ -38,15 +56,7 @@
     padding-bottom: 5px;
 }
 
-/* coin heading */
-.coin-content h2.coin-name {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: var(--h2-font-size);
-    font-weight: var(--font-bold);
-}
-
+/* coin info */
 .coin-content .coin-label-content {
     display: flex;
     flex-direction: row;
