@@ -10,6 +10,7 @@
 
 .header__coin-name {
     width: 100%;
+    height: 28px;
     font-size: var(--h2-font-size);
     font-weight: var(--font-bold);
     display: flex;

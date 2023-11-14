@@ -199,6 +199,10 @@
         height: 26px;
         font-size: 2.2rem;
     }
+    
+    .header__coin-name {
+        height: 26px;
+    }
 
     /* Mobile */
     .header__mobile {

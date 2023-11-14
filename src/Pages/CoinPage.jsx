@@ -20,7 +20,7 @@ const CoinPage = () => {
         <>
             <header className="header--sticky header--coin-page" >
                 <BackButton />
-                <h2 className="header__coin-name">{coinData.name ? coinData.name : "--"}</h2>
+                <h2 className="header__coin-name">{coinData.name ? coinData.name : ""}</h2>
             </header>
 
             <main>
