@@ -10,12 +10,18 @@ import './styles/backbutton.css';
 import './styles/loader.css';
 import './styles/mediaqueries.css'
 
-
-import { Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 
 
 
 function App() {
+    const location = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        console.log(location.pathname)
+    }, [location.pathname]);
 
     return (
         <>

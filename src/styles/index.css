@@ -280,21 +280,19 @@ a {
     width: 100vw;
     height: 100vh;
     background: var(--background);
-    transition: var(--transition-navigation-toggle);
+    transition: var(--transition-navigation-toggle) 100ms;
 }
 
 .mobile__nav.hidden {
-    /* transform: translateX(-100vw); */
     opacity: 0;
     visibility: hidden;
-    transition: var(--transition-navigation-toggle);
+    transition: var(--transition-navigation-toggle) 100ms;
 }
 
 .mobile__nav.visible {
-    /* transform: translateX(0); */
     opacity: 1;
     visibility: visible;
-    transition: var(--transition-navigation-toggle);
+    transition: var(--transition-navigation-toggle) 0ms;
 }
 
 .mobile__nav.hidden .mobile__nav__item {
@@ -400,17 +398,17 @@ input[type="checkbox"] {
     transition: var(--transition-navigation-toggle);
 }
 
-input[type]:checked~span.top {
+input[type="checkbox"]:checked~span.top {
     transform: translate(0px, 8px)rotate(45deg);
     width: 30px;
 }
 
-input[type]:checked~span.bot {
+input[type="checkbox"]:checked~span.bot {
     transform: translate(-0px, -8px) rotate(-45deg);
     width: 30px;
 }
 
-input[type]:checked~span.mid {
+input[type="checkbox"]:checked~span.mid {
     transform: translateX(-25px);
     opacity: 0;
 }
