@@ -15,21 +15,40 @@ import axios from 'axios';
 const Hero = () => {
     const [cryptoUpdates, setCryptoUpdates] = useState([]);
     const [cryptoLoading, setCryptoLoading] = useState(true);
+    const [loadingFailed, setLoadingFailed] = useState(false);
+    const maxRetries = 3;
+    let retryCount = 0;
 
 
+    async function getMarketData() {
+        try {
+            setCryptoLoading(true);
+            setLoadingFailed(false);
+            const response = await axios.request(feedDataUrl());
+            console.log(response.data);
+            setCryptoUpdates(response.data);
+            setCryptoLoading(false);
 
-    useEffect(() => {
-        async function getMarketData() {
-            try {
-                const response = await axios.request(feedDataUrl());
-                console.log(response.data);
-                setCryptoUpdates(response.data);
+            console.log('success');
+
+        } catch (error) {
+            console.error(error);
+
+            if (retryCount < maxRetries) {
+                setTimeout(() => {
+                    retryCount++;
+                    getMarketData();
+                    console.log(`retry: ${retryCount}`);
+                }, 4000);
+            } else {
                 setCryptoLoading(false);
-
-            } catch (error) {
-                console.error(error);
+                setLoadingFailed(true);
+                console.log('loading failed');
             }
         }
+    }
+
+    useEffect(() => {
         getMarketData()
     }, [])
 
@@ -67,6 +86,21 @@ const Hero = () => {
 
 
                 {cryptoLoading && <Loader />}
+
+                {(loadingFailed && !cryptoLoading) ?
+                    <div className="error-container">
+                        Loading Failed. Try Again!
+                        <div
+                            onClick={getMarketData}
+                            className="retry-btn"
+                        >
+                            Reload
+                        </div>
+                    </div>
+                    : null
+                }
+
+
                 <div className="crypto-feed-container">
                     {
                         cryptoUpdates.map((coin) => (

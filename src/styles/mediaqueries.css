@@ -430,6 +430,11 @@
     .home-container .loader {
         display: none;
     }
+    
+    .home-container .error-container {
+        display: none;
+    }
+
 
     /* show button */
     .button--market {

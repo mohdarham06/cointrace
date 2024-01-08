@@ -10,6 +10,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    /* For WebKit browsers (Safari, Chrome) */
+    -webkit-tap-highlight-color: transparent;
+    /* For Firefox */
+    -moz-tap-highlight-color: transparent;
 }
 
 
@@ -184,6 +189,35 @@ a {
     color: var(--negative-price-change);
 }
 
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: var(--font-size-medium);
+    color: red;
+    margin: 3.5rem 0;
+}
+
+.retry-btn {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--blue);
+    border-radius: 10rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    user-select: none;
+    transition: var(--transition-hover);
+}
+
+.retry-btn:hover,
+.retry-btn:active {
+    border: 2px solid rgb(72, 188, 223);
+}
 
 
 
@@ -833,4 +867,3 @@ footer {
     font-size: var(--font-size-regular);
     cursor: default;
 }
-

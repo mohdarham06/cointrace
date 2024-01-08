@@ -10,7 +10,7 @@ const NotFound = () => {
                 style={{
                     width: '100%'
                 }}
-                className="header--sticky header--go-back"
+                className="header--sticky header--coin-page"
             >
                 <BackButton />
             </header>

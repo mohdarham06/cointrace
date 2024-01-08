@@ -10,15 +10,15 @@
 
 @keyframes LoaderHeightAnim {
     0% {
-        height: 260px;
+        height: 200px;
     }
 
     50% {
-        height: 230px;
+        height: 190px;
     }
 
     100% {
-        height: 260px;
+        height: 200px;
     }
 }
 
