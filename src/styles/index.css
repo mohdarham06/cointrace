@@ -11,9 +11,9 @@
     padding: 0;
     box-sizing: border-box;
 
-    /* For WebKit browsers (Safari, Chrome) */
+    /* For WebKit browsers  */
     -webkit-tap-highlight-color: transparent;
-    /* For Firefox */
+    /* For Moz browsers */
     -moz-tap-highlight-color: transparent;
 }
 
